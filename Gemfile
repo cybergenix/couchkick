@@ -5,6 +5,7 @@ gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem "font-awesome-rails"
 gem 'devise'
+gem 'will_paginate', '3.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
