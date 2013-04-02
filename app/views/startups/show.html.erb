@@ -1,45 +1,83 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @startup.name %>
-</p>
-
-<p>
-  <b>Description:</b>
-  <%= @startup.description %>
-</p>
-
-<p>
-  <b>Location:</b>
-  <%= @startup.location %>
-</p>
-
-<p>
-  <b>Stage:</b>
-  <%= @startup.stage %>
-</p>
-
-<p>
-  <b>Founded:</b>
-  <%= @startup.founded %>
-</p>
-
-<p>
-  <b>Link1:</b>
-  <%= @startup.link1 %>
-</p>
-
-<p>
-  <b>Link2:</b>
-  <%= @startup.link2 %>
-</p>
-
-<p>
-  <b>Link3:</b>
-  <%= @startup.link3 %>
-</p>
-
-
-<%= link_to 'Edit', edit_startup_path(@startup) %> |
+<!-- Start Project Section -->
+  <article id="project">
+    <div class="background">
+      <img src="../img/slider/image1.jpg" alt="">
+      <div class="pattern"></div>
+      <div class="gradient"></div>
+    </div>
+    <div class="container">
+    
+      <!-- Start Project Description -->
+      <div class="row">
+        <div class="span8">
+          <h1 class="color-text"><%= @startup.name %></h1>
+          <h4><%= @startup.description %></h4>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span8">
+          <p class="project-info"><%= @startup.location %><span class="project-mounth">Founded in <%= @startup.founded %></span></p>
+          
+        </div>
+        <div class="span4">
+          <a class="launch" href="http://themes.tvda.eu" target="_blank"><i class="icon-link"></i><span>Launch website</span></a>
+        </div>
+      </div>
+      <div class="row"><div class="span12 line"></div></div>
+      <div class="row project-description">
+        <div class="span8">
+        </div>
+        <div class="span4 share">
+          <div class="up-title hidden-phone">Share this:</div>
+          <img src="img/share.png" alt="">
+          <%= @startup.link1 %>
+          <%= @startup.link2 %>
+          <%= @startup.link3 %><!-- Change this image to your code of social buttons -->
+        </div>
+      </div>
+      <!-- End Project Description -->
+      
+      <!-- Start Case -->
+      <section id="case">
+        <div class="row">
+          <div class="span8">
+            <%= image_tag @startup.logo (:medium) %>
+          </div>
+          <div class="span4 image-desc">
+            <h5>Stage</h5>
+            <p><%= @startup.stage %></p>
+            <% if @startup.stage == "Early" %>
+                <div class="progress progress-warning">
+                  <div class="bar" style="width: 20%"></div>
+                </div>
+            <% else %>
+                <div class="progress progress-warning">
+                  <div class="bar" style="width: 50%"></div>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      
+        
+        
+      </section>
+      <!-- End Case -->
+    </div>
+  </article>
+  <!-- End Project Section -->
+  
+  <!-- Start Pagination -->
+  <section class="left-right container">
+    <div class="row">
+      <div class="span12">
+        <%= link_to 'Edit', edit_startup_path(@startup) %> |
 <%= link_to 'Back', startups_path %>
+      </div>
+    </div>
+  </section>
+  <!-- End Pagination -->
+
+
+
+
