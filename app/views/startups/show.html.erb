@@ -2,7 +2,7 @@
 <!-- Start Project Section -->
   <article id="project">
     <div class="background">
-      <img src="../img/slider/image1.jpg" alt="">
+      <img src="#" alt="">
       <div class="pattern"></div>
       <div class="gradient"></div>
     </div>
@@ -21,7 +21,8 @@
           
         </div>
         <div class="span4">
-          <a class="launch" href="http://themes.tvda.eu" target="_blank"><i class="icon-link"></i><span>Launch website</span></a>
+          <%= link_to "official website", @startup.link1, class: "launch" %>
+          
         </div>
       </div>
       <div class="row"><div class="span12 line"></div></div>
@@ -29,25 +30,21 @@
         <div class="span8">
         </div>
         <div class="span4 share">
-          <div class="up-title hidden-phone">Share this:</div>
+          <%= image_tag @startup.logo (:medium) %>
+          <div class="up-title hidden-phone">social</div>
           <img src="img/share.png" alt="">
-          <%= @startup.link1 %>
-          <%= @startup.link2 %>
+          <% if @startup.link2 == "" %>
+
+          <% else %>
+
+          <div id="fb-root"></div><div class="fb-like" data-href=<%= @startup.link2 %> data-send="true" data-width="200" data-show-faces="true" data-colorscheme="dark"></div>
+
+          <% end %>
+
           <%= @startup.link3 %><!-- Change this image to your code of social buttons -->
-        </div>
-      </div>
-      <!-- End Project Description -->
-      
-      <!-- Start Case -->
-      <section id="case">
-        <div class="row">
-          <div class="span8">
-            <%= image_tag @startup.logo (:medium) %>
-          </div>
-          <div class="span4 image-desc">
-            <h5>Stage</h5>
+        </br>
             <p><%= @startup.stage %></p>
-            <% if @startup.stage == "Early" %>
+            <% if @startup.stage == "early stage" %>
                 <div class="progress progress-warning">
                   <div class="bar" style="width: 20%"></div>
                 </div>
@@ -56,6 +53,19 @@
                   <div class="bar" style="width: 50%"></div>
                 </div>
             <% end %>
+        </div>
+      </div>
+      <!-- End Project Description -->
+      
+      <!-- Start Case -->
+      <section id="case">
+        <div class="row">
+          <div class="span8">
+            
+          </div>
+          <div class="span4 image-desc">
+
+            
           </div>
         </div>
       

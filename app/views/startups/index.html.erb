@@ -41,7 +41,8 @@
    <% @startups.each do |startup| %>     
             <!-- Start Project -->
             <div class="post item span4 isotope-item website">
-                <a href="project.html" class="project-wrp hover-down">
+                <%= link_to startup, class: "project-wrp hover-down" do %>
+                
                     <div class="content-wrp">
                         <%= image_tag startup.logo(:medium) %>
                         <p class="project-name"><%= startup.name %></p>
@@ -52,13 +53,12 @@
                         <p class="project-name"><%= startup.name %></p>
                         <p class="project-desc"><%= startup.description %></p>
                         <p class="project-date">Founded in <%= startup.founded %></p>
-                        
                         <i class="icon-arrow-right"></i>
                     </div>
-                </a>
+                <% end %>
             </div>
             <!-- End Project -->
-    <% end %>
+                <% end %>
             
         </div>  
     </section>

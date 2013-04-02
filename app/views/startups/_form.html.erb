@@ -10,14 +10,24 @@
       </ul>
     </div>
   <% end %>
+
+<% if @startup.logo_file_name == nil %>
   <div class="span3">
     <%= f.input :name %>
-    <%= f.input :logo, label: "Upload an image" %>
+    <%= f.input :logo, label: "upload a logo" %>
+  </div>
+
+<% else %>
+
+<div class="span3">
+    <%= f.input :name %>
+    <%= f.input :logo, label: "update the logo" %>
   </br>
-      <div class="actions">
-    <%= f.submit %>
+    <%= image_tag @startup.logo %>
   </div>
-  </div>
+
+<% end %>
+
   <div class="span3 offset1">
     <%= f.input :description, as: :text, input_html: { rows: "2" }  %>
     <%= f.input :location %>
@@ -26,9 +36,17 @@
   </div>
   <div class="span3">
 
-    <%= f.input :link1 %>
-    <%= f.input :link2 %>
-    <%= f.input :link3 %>
+    <%= f.input :link1, label: "Official Website" %>
+    <%= f.input :link2, label: "Facebook Page" %>
+    <%= f.input :link3, label: "Other Social" %>
+
+    
   </div>
+  <div class="span2">
+ 
+            <%= f.submit "submit", class: "btn large color" %>
+
+
+    </div>
 
 <% end %>
