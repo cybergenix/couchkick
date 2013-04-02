@@ -921,14 +921,16 @@ pre code {
 -------------------------------------------------------- */
 
 .alert {
-	position: relative;
+	position:absolute;
+	left:0px;
+	top:100px;
+	width: 25%;
+	z-index:999;
 	padding: 10px 35px 10px 14px;
 	margin: 20px 0;
 	background-color: #faf2cb;
 	color: #c09853;
-	-webkit-border-radius: 4px;
-	-moz-border-radius: 4px;
-	border-radius: 4px;
+	opacity:0.7;
 }
 
 .alert h5 {
