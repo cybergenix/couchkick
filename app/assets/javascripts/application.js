@@ -14,7 +14,6 @@
 //= require jquery_ujs
 //= require_tree .
 //= require jquery.isotope.min.js
-//= require bootstrap
 //= require shortcodes.js
 //= require main.js
 //= require selectnav.min.js

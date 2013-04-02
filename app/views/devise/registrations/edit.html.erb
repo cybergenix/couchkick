@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row">
+
+    <div class="span12">
+
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
+        <h5><span class="color-text">edit</span> your account</h5>
+      </div>
+    </div>
+  </section>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
+  <%= f.error_notification %>
+
+<div class="span3">
+    <%= f.input :email, :required => true, :autofocus => true %>
+    <%= f.input :password, :autocomplete => "off", :required => false %>
+    <%= f.input :password_confirmation, :required => false %>
+</div>
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+
+<div class="span5">
+  <% if @entrepreneur.image_file_name == nil %>
+      <%= f.input :image, label: "upload a profile image" %>
+      <% else %>
+      <%= image_tag @entrepreneur.image (:medium) %>
+      <%= f.input :image, label: "update your profile image" %>
+      <% end %>
+    </div>
+
+    <div class="span3">
+      <%= f.input :current_password, :required => true %>
+    <%= f.button :submit, "Update", class: "btn large color" %>
+  </div>
+
+<% end %>
+
+<div class="span12">
+<p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), :data => { :confirm => "Are you sure?" }, :method => :delete %>.</p>
+
+<%= link_to "Back", :back %>
+</Div>
+
+</div>
+
+</div>
+
+</div>

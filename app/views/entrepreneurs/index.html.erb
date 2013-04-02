@@ -1,0 +1,76 @@
+<!-- Start Title -->
+<section id="page-title" class="container">
+        <div class="row">
+            <div class="span10">
+                <h2>entrepreneurs</h2>
+                <div class="dropdown">
+                    <div class="dropmenu">
+                        <p class="menu-title">show</p>
+                        <p class="selected">all entrepreneurs</p>
+                        <i class="icon-chevron-down"></i>
+                    </div>
+                    <div class="dropmenu-active">
+                        <ul class="option-set" data-option-key="filter">
+                            <li><a class="selected drop-selected" href="#filter" data-option-value="*">All projects</a></li>
+                            <li><a href="#filter" data-option-value=".digital">Digital</a></li>
+                            <li><a href="#filter" data-option-value=".website">Website</a></li>
+                            <li><a href="#filter" data-option-value=".strategy">Strategy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="span2 hidden-phone">
+                <% if @entrepreneurs.count < 2 %>
+                <p><span class="number"><%= @entrepreneurs.count %></span>entrepreneur</p>
+                <% else %>
+                <p><span class="number"><%= @entrepreneurs.count %></span>entrepreneurs</p>
+                <% end %>
+            </div>
+        </div>
+        <div class="row">
+            <hr class="span12 clear-bottom">
+        </div>
+    </section>
+    <!-- End Title -->
+	
+	<!-- Start Team Section -->		
+	<section id="team">
+		<div class="container">
+			<div class="row">
+
+ <% @entrepreneurs.each do |entrepreneur| %>   
+				<!-- Start Profile -->	
+				<div class="profile-wrp hover-left">
+		   		    <div class="content-wrp">
+    					<div class="profile-photo">
+    						<div class="overlay"></div>
+	    					<i class="profile-icon icon-arrow-right"></i>
+							<%= image_tag entrepreneur.image(:medium) %>
+						</div>
+						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
+						<p class="profile-position">Chief Executive Officer</p>
+						<ul class="social-icons">
+						<li><a href="#"><i class="icon-facebook"></i></a></li>
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-skype"></i></a></li>
+						<li><a href="#"><i class="icon-linkedin"></i></a></li>
+						</ul>
+		   		    </div>
+					<div class="overlay-wrp">
+	        			<div class="overlay"></div>
+						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
+						<p class="profile-position">Chief Executive Officer</p>
+						<p class="profile-quote">@ couchkick which is looking to hire and mentor</p>
+						<%= link_to "talk", root_path, class: "btn large" %>
+					</div>
+				</div>
+				<!-- End Profile -->
+<% end %>
+							
+			</div>
+		</div>
+	</section>
+	<!-- End Team Section -->	
+	
+	
+	

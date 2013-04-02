@@ -12,17 +12,36 @@
 					<!-- Start Navigation -->
 					<nav>
 						<ul id="navigation" class="pull-right hidden-phone">
+
+
+							<li>
+								<a class="active"href="#">dashboard</a>
+							</li>
 						
 
 							<li>
 								<a href="#">jobs & ideas</a>
 							</li>
 							<li>
-								<a href="#">entrepreneurs</a>
+								<%= link_to 'entrepreneurs', entrepreneurs_path %>
+								
 							</li>
 							<li>
-								<%= link_to "startups", startups_path, class: "active" %>
+								<%= link_to "startups", startups_path %>
 							</li>
+
+							<% if entrepreneur_signed_in? %>
+
+							<li><%= link_to 'logout', destroy_entrepreneur_session_path, method: :delete %></li>
+
+							<% else %>
+
+							<li><%= link_to "login", new_entrepreneur_session_path, class: "active" %></li>
+							<li><%= link_to "signup", new_entrepreneur_registration_path %></li>
+
+							<% end %>
+
+							<% %>
 						</ul>
 					</nav>
 					<!-- End Navigation -->

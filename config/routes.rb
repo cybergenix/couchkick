@@ -1,4 +1,7 @@
 Couchkick::Application.routes.draw do
+  devise_for :entrepreneurs
+  resources :entrepreneurs
+
   resources :startups
 
 

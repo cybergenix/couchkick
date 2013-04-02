@@ -4,6 +4,7 @@ gem 'rails', '3.2.12'
 gem 'simple_form'
 gem "font-awesome-rails"
 gem "paperclip", "~> 3.0"
+gem 'devise'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

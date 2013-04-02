@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="row">
+
+    <div class="span12">
+
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
+        <h5><span class="color-text">signup</span> @ couchkick</h5>
+      </div>
+    </div>
+  </section>
+
+<%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+  <%= f.error_notification %>
+
+<div class="span3">
+
+  	<%= f.input :first_name, :required => true, value: "First Name" %>
+  	<%= f.input :last_name, :required => true, value: "Last Name" %>
+</div>
+
+<div class="span3">
+    <%= f.input :email, :required => true, :autofocus => true %>
+</div>
+
+<div class="span3">
+    <%= f.input :password, :required => true %>
+    <%= f.input :password_confirmation, :required => true %>
+</div>
+
+</end>
+
+
+<%= f.button :submit, "Sign up", class: "btn large color" %>
+
+<% end %>
+
+<%= render "devise/shared/links" %>
+
+</div>
+
+</div>
+
+</div>
