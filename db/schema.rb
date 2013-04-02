@@ -11,6 +11,23 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 0) do
+ActiveRecord::Schema.define(:version => 20130402101019) do
+
+  create_table "startups", :force => true do |t|
+    t.string   "name"
+    t.text     "description"
+    t.string   "location"
+    t.string   "stage"
+    t.date     "founded"
+    t.string   "link1"
+    t.string   "link2"
+    t.string   "link3"
+    t.datetime "created_at",        :null => false
+    t.datetime "updated_at",        :null => false
+    t.string   "logo_file_name"
+    t.string   "logo_content_type"
+    t.integer  "logo_file_size"
+    t.datetime "logo_updated_at"
+  end
 
 end

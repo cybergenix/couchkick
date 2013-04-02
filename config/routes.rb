@@ -1,4 +1,7 @@
 Couchkick::Application.routes.draw do
+  resources :startups
+
+
   root :to => 'pages#home'
 
   get "pages/about"
