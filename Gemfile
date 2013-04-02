@@ -2,8 +2,8 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
 gem 'simple_form'
-gem "font-awesome-rails"
 gem "paperclip", "~> 3.0"
+gem "font-awesome-rails"
 gem 'devise'
 
 # Bundle edge Rails instead:

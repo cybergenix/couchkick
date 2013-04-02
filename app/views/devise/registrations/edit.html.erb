@@ -11,32 +11,60 @@
     </div>
   </section>
 
+
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f| %>
   <%= f.error_notification %>
 
-<div class="span3">
-    <%= f.input :email, :required => true, :autofocus => true %>
+  <div class="tabs span12">
+          <ul>
+            <li id="tab1" class="current">basic</li>
+            <li id="tab2">picture</li>
+            <li id="tab3">social</li>
+            <li id="tab4">skills</li>
+            <li id="tab5">cv</li>
+            <li id="tab6">portfolio</li>
+          </ul>
+          <div class="tab-content-wrp">
+              <div id="tab1-content" class="tab-content active">
+                    <%= f.input :email, :required => true, :autofocus => true %>
     <%= f.input :password, :autocomplete => "off", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
-</div>
-    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
-    <% end %>
 
-
-<div class="span5">
-  <% if @entrepreneur.image_file_name == nil %>
+              </div>
+              <div id="tab2-content" class="tab-content">
+                 <% if @entrepreneur.image_file_name == nil %>
       <%= f.input :image, label: "upload a profile image" %>
       <% else %>
       <%= image_tag @entrepreneur.image (:medium) %>
       <%= f.input :image, label: "update your profile image" %>
       <% end %>
+              </div>
+              <div id="tab3-content" class="tab-content">
+                
+
+      <%= f.input :facebook, label: "facebook url" %>
+      <%= f.input :twitter, label: "twitter url" %>
+      <%= f.input :linkedin, label: "linkedin url" %>
+              </div>
+              <div id="tab4-content" class="tab-content"></div>
+              <div id="tab5-content" class="tab-content"></div>
+              <div id="tab6-content" class="tab-content"></div>
+          </div>
+        </div>
+
+
+
+
+
+
+    <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+      <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
+    <% end %>
+
+<div class="span3">
+      <%= f.input :current_password, :required => true %> <%= f.button :submit, "Update", class: "btn large color" %>
     </div>
 
-    <div class="span3">
-      <%= f.input :current_password, :required => true %>
-    <%= f.button :submit, "Update", class: "btn large color" %>
-  </div>
 
 <% end %>
 

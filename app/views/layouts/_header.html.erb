@@ -19,15 +19,17 @@
 								<a class="active" href="#">dashboard</a>
 							</li>
 							<li>
-								<a href="#">jobs & ideas</a>
+								<a href="#">match</a>
 							</li>
 							<li>
 								<%= link_to 'entrepreneurs', entrepreneurs_path %>
 								
 							</li>
+							<!--
 							<li>
 								<%= link_to "startups", startups_path %>
 							</li>
+						-->
 
 							
 
@@ -36,15 +38,16 @@
 							<% else %>
 
 							<li>
-								<a href="#">jobs & ideas</a>
+								<a href="#">match</a>
 							</li>
 							<li>
 								<%= link_to 'entrepreneurs', entrepreneurs_path %>
 								
 							</li>
+							<!--
 							<li>
 								<%= link_to "startups", startups_path %>
-							</li>
+							</li>-->
 
 							<li><%= link_to "login", new_entrepreneur_session_path, class: "active" %></li>
 							<li><%= link_to "signup", new_entrepreneur_registration_path %></li>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130402161008) do
+ActiveRecord::Schema.define(:version => 20130402220433) do
 
   create_table "entrepreneurs", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
@@ -32,6 +32,9 @@ ActiveRecord::Schema.define(:version => 20130402161008) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.string   "facebook"
+    t.string   "twitter"
+    t.string   "linkedin"
   end
 
   add_index "entrepreneurs", ["email"], :name => "index_entrepreneurs_on_email", :unique => true

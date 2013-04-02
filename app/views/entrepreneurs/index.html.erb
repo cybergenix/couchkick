@@ -50,10 +50,21 @@
 						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
 						<p class="profile-position">Chief Executive Officer</p>
 						<ul class="social-icons">
-						<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-skype"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin"></i></a></li>
+						<% if entrepreneur.facebook != "" %>
+						<li><a href=<%= entrepreneur.facebook %>><i class="icon-facebook"></i></a></li>
+						<% else %>
+						<li><a href="#"><i class="icon-check-empty"></i></a></li>
+						<% end %>
+						<% if entrepreneur.twitter != "" %>
+						<li><a href=<%= entrepreneur.twitter %>><i class="icon-twitter"></i></a></li>
+						<% else %>
+						<li><a href="#"><i class="icon-check-empty"></i></a></li>
+						<% end %>
+						<% if entrepreneur.linkedin != "" %>
+						<li><a href=<%= entrepreneur.linkedin %>><i class="icon-linkedin"></i></a></li>
+						<% else %>
+						<li><a href="#"><i class="icon-check-empty"></i></a></li>
+						<% end %>
 						</ul>
 		   		    </div>
 					<div class="overlay-wrp">

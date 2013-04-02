@@ -34,6 +34,8 @@
 		background: url("../img/blackorchid.png");
 		background-repeat:repeat;
 	}
+
+	
 	a { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
 		font-weight: bold;
 		color: #f5c11e;
@@ -251,7 +253,7 @@
 
 /* ========================================================
    Common Elements
-======================================================== */
+=========================================================== */
 
 	/* Services Icons ------------------------------------------ */
 	
