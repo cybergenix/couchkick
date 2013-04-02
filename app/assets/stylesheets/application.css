@@ -10,4 +10,14 @@
  *
  *= require_self
  *= require_tree .
+ *= require normalize.css
+ *= require layout.css
+ *= require shortcodes.css
+ *= require grid.css
+ *= require jquery.heroCarousel.css
+ *= require flexslider.css
+ *= require jquery.fancybox.css
+ *= require mediaqueries.css
+ *= require isotope.css
+ *= require jquery.heroCarousel.css
  */

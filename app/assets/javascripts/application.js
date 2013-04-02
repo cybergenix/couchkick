@@ -13,3 +13,16 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
+//= require jquery.isotope.min.js
+//= require bootstrap
+//= require shortcodes.js
+//= require main.js
+//= require selectnav.min.js
+//= require jquery.fancybox.pack.js
+//= require jquery.fancybox-media.js
+//= require jquery.flexslider.js
+//= require mql.js
+//= require last-tw.js
+//= require jflickrfeed.js
+//= require settings.js
+//= require hero/jquery.heroCarousel-1.3.js
