@@ -1,3 +1,4 @@
+
 <%= simple_form_for(@startup, html: { class: "form-horizontal"}) do |f| %>
   <% if @startup.errors.any? %>
     <div id="error_explanation">
@@ -11,38 +12,44 @@
     </div>
   <% end %>
 
-<% if @startup.logo_file_name == nil %>
-  <div class="span3">
-    <%= f.input :name %>
-    <%= f.input :logo, label: "upload a logo" %>
-  </div>
-
-<% else %>
-
-<div class="span3">
-    <%= f.input :name %>
-    <%= f.input :logo, label: "update the logo" %>
-  </br>
-    <%= image_tag @startup.logo %>
-  </div>
-
-<% end %>
-
-  <div class="span3 offset1">
-    <%= f.input :description, as: :text, input_html: { rows: "2" }  %>
+  <div class="tabs">
+          <ul>
+            <li id="tab1" class="current">info</li>
+            <li id="tab2">content</li>
+            <li id="tab3">social</li>
+            <li id="tab4">team</li>
+          </ul>
+          <div class="tab-content-wrp">
+              <div id="tab1-content" class="tab-content active">
+            <%= f.input :name %>
+                <%= f.input :description, as: :text, input_html: { rows: "2" }  %>
     <%= f.input :location %>
     <%= f.input :stage %>
     <%= f.input :founded %>
-  </div>
-  <div class="span3">
-
-    <%= f.input :link1, label: "Official Website" %>
+              </div>
+              <div id="tab2-content" class="tab-content">
+         <% if @startup.logo_file_name == nil %>
+          <%= f.input :logo, label: "upload a logo" %>
+         <% else %>
+          <%= f.input :logo, label: "update the logo" %>
+          </br>
+          <%= image_tag @startup.logo %>
+          <% end %>
+              </div>
+              <div id="tab3-content" class="tab-content">
+                    <%= f.input :link1, label: "Official Website" %>
     <%= f.input :link2, label: "Facebook Page" %>
     <%= f.input :link3, label: "Other Social" %>
+              </div>
+              <div id="tab4-content" class="tab-content"></div>
+          </div>
+        </div>
 
-    
-  </div>
-  <div class="span2">
+
+
+
+
+  <div class="span3">
  
             <%= f.submit "submit", class: "btn large color" %>
 
