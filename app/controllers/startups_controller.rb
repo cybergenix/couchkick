@@ -1,4 +1,5 @@
 class StartupsController < ApplicationController
+  before_filter :authenticate_entrepreneur!, except: [:show]
   # GET /startups
   # GET /startups.json
   def index

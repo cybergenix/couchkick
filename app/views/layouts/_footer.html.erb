@@ -2,15 +2,15 @@
 	<footer class="container">
 		<div class="row">
 			<div class="span12">
-				<p>© 2013 <a href="index.html">couchkick</a>. All rights reserved.<br>
+				<p>© 2013 <%= link_to "couchkick", root_path %>. All rights reserved.<br>
 				</p>
 				<!-- Start Footer Navigation -->
 				<nav class="hidden-phone">
 					<ul class="pull-right">
-						<li><a class="active" href="#">about</a></li>
-						<li><a href="#">faq</a></li>
-						<li><a href="#">privacy</a></li>
-						<li><a href="#">terms</a></li>
+						<li><%= link_to "about", pages_about_path, class: "active" %></li>
+						<li><%= link_to "faq", pages_faq_path, class: "active" %></li>
+						<li><%= link_to "privacy", pages_privacy_path, class: "active" %></li>
+						<li><%= link_to "terms", pages_terms_path, class: "active" %></li>
 					</ul>
 				</nav>
 				<!-- End Footer Navigation -->

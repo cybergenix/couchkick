@@ -20,7 +20,7 @@
        <% if current_entrepreneur.usertype != nil %>
 
 							<li>
-								<%= link_to 'dashboard', root_path, class: "active" %>
+								<%= link_to 'dashboard', root_path %>
 							</li>
 
 
@@ -41,14 +41,7 @@
 							<% else %>
 
 							
-							<li>
-								<%= link_to 'meet', entrepreneurs_path %>
-								
-							</li>
-						
-							<li>
-								<%= link_to "startups", startups_path %>
-							</li>
+							
 
 							<li><%= link_to "login", new_entrepreneur_session_path, class: "active" %></li>
 							<li><%= link_to "signup", new_entrepreneur_registration_path %></li>

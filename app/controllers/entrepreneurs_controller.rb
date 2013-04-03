@@ -1,4 +1,5 @@
 class EntrepreneursController < ApplicationController
+  before_filter :authenticate_entrepreneur!, except: [:show]
   def index
   	@entrepreneurs = Entrepreneur.all
     respond_to do |format|
