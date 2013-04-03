@@ -1,0 +1,107 @@
+<!-- Start Title -->
+	<section id="title" class="container">
+		<div class="row">
+			<div class="span12">
+			</div>
+		</div>
+	</section>
+	<!-- End Title -->
+	<!-- Start Intro Block 
+	<section class="intro container">
+		<div class="row">
+			<div class="span12">
+				<p>welcome to your <a href="#">dashboard</a> <%= current_entrepreneur.first_name %></p>
+			</div>
+		</div>
+	</section>
+ End Intro Block -->
+			
+	<!-- Start About Text -->			
+	<section id="about-text" class="container">
+		<div class="row">
+			<div class="span4">
+				<div class="tabs">
+					<ul>
+						<li id="tab1" class="current">you</li>
+						
+					</ul>
+					<div class="tab-content-wrp">
+    					<div id="tab1-content" class="tab-content active">
+    						
+    						<%= image_tag current_entrepreneur.image (:medium) %>
+    						
+    						<p class="btn large"><%= current_entrepreneur.usertype %> entrepreneur</p>
+    						<%= link_to "edit profile", edit_entrepreneur_registration_path, class: "btn large color" %>
+    						
+    						<div class="date">Skills:</div>
+    						<% current_entrepreneur.tag_list.each do |tag| %>
+                <p class="btn small "><%= tag %></p>
+                <% end %>
+                <div class="date">Social:</div>
+                <ul class="social-icons">
+						<% if current_entrepreneur.facebook != "" %>
+						<li><a href=<%= current_entrepreneur.facebook %>><i class="icon-facebook"></i></a></li>
+						<% else %>
+						<li><a href="#"><i class="icon-check-empty"></i></a></li>
+						<% end %>
+						<% if current_entrepreneur.twitter != "" %>
+						<li><a href=<%= current_entrepreneur.twitter %>><i class="icon-twitter"></i></a></li>
+						<% else %>
+						
+						<% end %>
+						<% if current_entrepreneur.linkedin != "" %>
+						<li><a href=<%= current_entrepreneur.linkedin %>><i class="icon-linkedin"></i></a></li>
+						<% else %>
+						
+						<% end %>
+						</ul>
+						<div class="date">you have</div>
+				<p class="btn color large">532 entrepreneur points</p>
+				
+
+    					</div>
+
+
+    					
+					</div>
+				</div>
+
+				
+				
+			</div>
+			<div class="span4">
+				<div class="tabs">
+					<ul>
+						<li id="tab1" class="current">your stuff</li>
+
+						
+					</ul>
+
+					<div class="tab-content-wrp">
+    					<div id="tab1-content" class="tab-content active">
+    						<p class="btn large">find a match</p>
+    						<%= link_to "create a startup", new_startup_path, class: "btn large color" %>
+    						
+    					</div>
+    					
+					</div>
+				</div>
+
+			</div>
+			<div class="span4">
+				<div class="tabs">
+					<ul>
+						<li id="tab1" class="current">what's going on</li>
+						
+					</ul>
+					<div class="tab-content-wrp">
+    					<div id="tab1-content" class="tab-content active">
+    						
+    					</div>
+    					
+					</div>
+				</div>
+
+			</div>
+		</div>		
+	</section>

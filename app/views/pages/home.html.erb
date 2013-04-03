@@ -1,4 +1,8 @@
+<% if entrepreneur_signed_in? %>
 
+<%= render 'pages/dashboard' %>
+
+<% else %>
 	<!-- Start Hero Carousel -->
 	<section class="hero">
 
@@ -110,4 +114,6 @@
 		</div>
 	</div>
 	<!-- End Clients Block -->
+
+	<% end %>
 			

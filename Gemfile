@@ -5,7 +5,6 @@ gem 'simple_form'
 gem "paperclip", "~> 3.0"
 gem "font-awesome-rails"
 gem 'devise'
-gem 'will_paginate', '3.0.3'
 gem 'acts-as-taggable-on'
 
 # Bundle edge Rails instead:

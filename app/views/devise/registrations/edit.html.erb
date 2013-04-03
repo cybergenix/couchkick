@@ -6,7 +6,12 @@
 <section id="title" class="container">
     <div class="row">
       <div class="span12">
-        <h5><span class="color-text">edit</span> your account</h5>
+     <% if current_entrepreneur.usertype == nil %>
+        <h5><span class="color-text">welcome</span> <%= current_entrepreneur.first_name %></h5>
+        <h5><span class="color-text">we just need to know a bit more about you before continuing</h5>
+        <% else %>
+<h5><span class="color-text">edit</span> your account</h5>
+        <% end %>
       </div>
     </div>
   </section>
@@ -27,9 +32,13 @@
           </ul>
           <div class="tab-content-wrp">
               <div id="tab1-content" class="tab-content active">
-                    <%= f.input :email, :required => true, :autofocus => true %>
+                
+                    <%= f.input :email, :required => false, :autofocus => true %>
     <%= f.input :password, :autocomplete => "off", :required => false %>
     <%= f.input :password_confirmation, :required => false %>
+  <div id="usertype">
+    <%= f.input :usertype, collection: [ "technical", "non-technical", "designer"], label: "select what best user type suits you", :required => true %></div>
+  
 
               </div>
               <div id="tab2-content" class="tab-content">
@@ -73,11 +82,6 @@
               </div>
           </div>
         </div>
-
-
-
-
-
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>

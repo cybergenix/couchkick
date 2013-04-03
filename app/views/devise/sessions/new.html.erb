@@ -6,13 +6,16 @@
 <section id="title" class="container">
     <div class="row">
       <div class="span12">
-        <h5><span class="color-text">login</span> to couchkick</h5>
+        <a class="heart-circle" href="portfolio.html"><i class="icon-heart"></i></a>
+        <h5><span class="color-text">login</span></h5>
       </div>
     </div>
   </section>
 
-  <div class="span6 offset4">
 
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
     <%= f.input :email, :required => false, :autofocus => true %>
@@ -24,10 +27,12 @@
     <%= f.button :submit, "login", class: "btn large color" %>
 
 <% end %>
-</div>
-
+      </div>
+    </div>
+  </section>
+<div class="span12">
 <%= render "devise/shared/links" %>
-
+</div>
 </div>
 
 </div>

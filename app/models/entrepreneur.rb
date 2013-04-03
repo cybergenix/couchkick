@@ -6,7 +6,8 @@ class Entrepreneur < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :image, :facebook, :twitter, :linkedin, :cv, :phone, :skype, :prefmethod, :tag_list
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
+   :image, :facebook, :twitter, :linkedin, :cv, :phone, :skype, :prefmethod, :tag_list, :usertype
   # attr_accessible :title, :body
   acts_as_taggable
 
@@ -17,6 +18,7 @@ class Entrepreneur < ActiveRecord::Base
                             size: { less_than: 5.megabytes }
 
 
-  has_attached_file :image, styles: { medium: "320x240>"}
+
+  has_attached_file :image, styles: { medium: "320x240>"}, :default_url => '../img/defaultprofile.jpg'
   has_attached_file :cv
 end
