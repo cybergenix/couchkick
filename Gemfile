@@ -6,6 +6,7 @@ gem "paperclip", "~> 3.0"
 gem "font-awesome-rails"
 gem 'devise'
 gem 'acts-as-taggable-on'
+gem 'activeadmin'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
