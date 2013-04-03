@@ -23,7 +23,14 @@
 		color: #ccced0;
 		background-color: #1a1c1e;
 	}
-	
+
+	.videohome {
+		display: block;
+		margin-left: auto;
+    	margin-right: auto;
+    	margin-top: 100px;
+	}
+
 	strong, b {
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* iOS fix for Helvetica Neue Light */
 		-webkit-font-smoothing: antialiased;
@@ -35,8 +42,11 @@
 
 	.hero {
 		height: 500px;
-		background: url("../img/blackorchid.png");
-		background-repeat:repeat;
+		 background: url(../img/wallpaperny.jpg) no-repeat center center fixed; 
+  		-webkit-background-size: cover;
+  		-moz-background-size: cover;
+  		-o-background-size: cover;
+  		background-size: cover;
 	}
 
 	
