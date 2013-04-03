@@ -22,8 +22,8 @@
             <li id="tab3">social</li>
             <li id="tab4">skills</li>
             <li id="tab5">cv</li>
-            <li id="tab6">portfolio</li>
-            <li id="tab7">contacts</li>
+
+            <li id="tab6">contacts</li>
           </ul>
           <div class="tab-content-wrp">
               <div id="tab1-content" class="tab-content active">
@@ -47,7 +47,14 @@
       <%= f.input :twitter, label: "twitter url" %>
       <%= f.input :linkedin, label: "linkedin url" %>
               </div>
-              <div id="tab4-content" class="tab-content"></div>
+              <div id="tab4-content" class="tab-content">
+                <%= f.input :tag_list, label: "Separate Skills by Comma" %>
+                <h5>Current Skills</h5>
+                <% @entrepreneur.tag_list.each do |tag| %>
+                <p class="btn small "><%= tag %></p>
+                <% end %>
+
+              </div>
 
               <div id="tab5-content" class="tab-content">
                 <% if @entrepreneur.cv_file_name == nil %>
@@ -58,8 +65,8 @@
                 <% end %>
 
               </div>
-              <div id="tab6-content" class="tab-content"></div>
-              <div id="tab7-content" class="tab-content">
+
+              <div id="tab6-content" class="tab-content">
                 <%= f.input :phone %>
                 <%= f.input :skype %>
                 <%= f.input :prefmethod, collection: [ "phone", "skype", "both"], default: "phone", label: "best method for contact" %>

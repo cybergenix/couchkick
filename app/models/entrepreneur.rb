@@ -6,8 +6,9 @@ class Entrepreneur < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   # Setup accessible (or protected) attributes for your model
-  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :image, :facebook, :twitter, :linkedin, :cv, :phone, :skype, :prefmethod
+  attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :image, :facebook, :twitter, :linkedin, :cv, :phone, :skype, :prefmethod, :tag_list
   # attr_accessible :title, :body
+  acts_as_taggable
 
   
 
