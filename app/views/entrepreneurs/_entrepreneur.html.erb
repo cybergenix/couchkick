@@ -1,0 +1,38 @@
+<!-- Start Profile -->	
+				<div class="profile-wrp hover-left">
+		   		    <div class="content-wrp">
+    					<div class="profile-photo">
+    						<div class="overlay"></div>
+	    					<i class="profile-icon icon-arrow-right"></i>
+							<%= image_tag entrepreneur.image(:medium) %>
+						</div>
+						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
+						<p class="profile-position">Chief Executive Officer</p>
+						<ul class="social-icons">
+						<% if entrepreneur.facebook != "" %>
+						<li><a href=<%= entrepreneur.facebook %>><i class="icon-facebook"></i></a></li>
+						<% else %>
+						<li><a href="#"><i class="icon-check-empty"></i></a></li>
+						<% end %>
+						<% if entrepreneur.twitter != "" %>
+						<li><a href=<%= entrepreneur.twitter %>><i class="icon-twitter"></i></a></li>
+						<% else %>
+						<li><a href="#"><i class="icon-check-empty"></i></a></li>
+						<% end %>
+						<% if entrepreneur.linkedin != "" %>
+						<li><a href=<%= entrepreneur.linkedin %>><i class="icon-linkedin"></i></a></li>
+						<% else %>
+						<li><a href="#"><i class="icon-check-empty"></i></a></li>
+						<% end %>
+						</ul>
+		   		    </div>
+					<div class="overlay-wrp">
+	        			<div class="overlay"></div>
+						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
+						<p class="profile-position">Chief Executive Officer</p>
+						<p class="profile-quote">is looking to meet and to mentor</p>
+						<%= link_to "talk", root_path, class: "btn large" %>
+						<%= link_to "view profile", root_path, class: "btn large" %>
+					</div>
+				</div>
+				<!-- End Profile -->

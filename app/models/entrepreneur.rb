@@ -9,6 +9,8 @@ class Entrepreneur < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name, :image, :facebook, :twitter, :linkedin
   # attr_accessible :title, :body
 
+  
+
     validates_attachment :image,
                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
                             size: { less_than: 5.megabytes }

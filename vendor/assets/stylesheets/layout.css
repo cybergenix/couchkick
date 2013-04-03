@@ -29,6 +29,10 @@
 		-webkit-font-smoothing: antialiased;
 	}
 	
+	.searchbar{
+		margin-top: 25px;
+	}
+
 	.hero {
 		height: 500px;
 		background: url("../img/blackorchid.png");

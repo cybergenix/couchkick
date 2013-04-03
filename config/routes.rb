@@ -1,6 +1,6 @@
 Couchkick::Application.routes.draw do
   devise_for :entrepreneurs
-  resources :entrepreneurs
+  resources :entrepreneurs, :path => "meet"
 
   resources :startups
 
