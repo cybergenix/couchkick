@@ -119,7 +119,9 @@
 
 	/* Header and Navigation ------------------------------------------ */
 	
-	header { min-height: 120px; background: #232527; z-index: 99; position: relative; }
+
+
+	header { min-height: 120px; background: #232527; z-index: 99; position: relative;  }
 	
 	header #logo { font-size: 12px; margin-top: 39px; }
 		header #logo p { padding-top: 22px; color: white; }
