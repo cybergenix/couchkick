@@ -19,10 +19,16 @@
 
        <% if current_entrepreneur.usertype != nil %>
 
-
+<li class="submenu">
+								<%= link_to '<i class="icon-dashboard"></i> dashboard'.html_safe, root_path %>
+								<ul class="dropmenu-active">
+									<li><a href="#" class="drop-selected"><i class="icon-star"></i> new message</a></li>
+									<li><a href="#" class="drop-selected"><i class="icon-star"></i> new application</a></li>
+								</ul>
+							</li>
 
 							<li>
-								<%= link_to '<i class="icon-dashboard"></i> dashboard'.html_safe, root_path %>
+								
 							</li>
  							
  							<li>
