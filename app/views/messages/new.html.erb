@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+
+    <div class="span12">
+
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
+        <h5><span class="color-text">new</span> message</h5>
+      </div>
+    </div>
+  </section>
+
+<%= simple_form_for @message, :url => entrepreneur_messages_path(@entrepreneur) do |f| %>
+
+		<%= f.input :to, label: "to who?" %>
+
+    <%= f.input :subject, label: "subject" %>
+ 
+      <%= f.input :body, label: "message", input_html: { rows: "2" } %>
+
+      <%= f.submit "Send", class: "btn color" %>
+<% end %>
+
+
+</div>
+
+</div>
+<div class="span12">
+</div>
+
+</div>

@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="row">
+
+    <div class="span12">
+
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
+        <h5><span class="color-text">inbox</span></h5>
+      </div>
+    </div>
+  </section>
+
+
+<%= form_tag delete_selected_entrepreneur_messages_path(@entrepreneur, :method => :post) do %>
+	<% if params[:mailbox] == "sent" %>
+			<%= render 'messages/sent' %>
+	<% else %>
+			<%= render 'messages/inbox' %>
+		<% end %>
+<% end %>
+
+</div>
+
+</div>
+<div class="span12">
+</div>
+
+</div>

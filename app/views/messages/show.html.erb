@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+
+    <div class="span12">
+
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
+        <h5><span class="color-text">show</span> message</h5>
+      </div>
+    </div>
+  </section>
+
+
+<p><strong>From:</strong> <%= @message.sender == @entrepreneur ? link_to("You", entrepreneur_path(@entrepreneur)) : link_to(h(@message.sender.id), entrepreneur_path(@message.sender)) %></p>
+<p><strong>Received:</strong> <%= @message.created_at.to_s(:long) %></p>
+<p><strong>To:</strong> <%= @message.recipient == @entrepreneur ? link_to("You", entrepreneur_path(@entrepreneur)) : link_to(h(@message.recipient.login), entrepreneur_path(@message.recipient)) %></p>
+<p>
+  <strong>Message</strong><br />
+  <%=h @message.body %>
+</p>
+<p>
+  <% if @message.recipient == @entrepreneur %>
+	  <%= link_to "Reply", new_entrepreneur_message_path(@entrepreneur, :reply_to => @message) %> |
+  <% end %>
+  <%= link_to "Inbox", entrepreneur_messages_path(@entrepreneur)%>
+</p>
+
+</div>
+
+</div>
+<div class="span12">
+</div>
+
+</div>

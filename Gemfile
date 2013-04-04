@@ -7,6 +7,8 @@ gem "font-awesome-rails"
 gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'activeadmin'
+gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

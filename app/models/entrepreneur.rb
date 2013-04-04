@@ -21,4 +21,6 @@ class Entrepreneur < ActiveRecord::Base
 
   has_attached_file :image, styles: { medium: "320x240>"}, :default_url => '../img/defaultprofile.jpg'
   has_attached_file :cv
+
+  has_private_messages
 end

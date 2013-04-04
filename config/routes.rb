@@ -1,5 +1,17 @@
 Couchkick::Application.routes.draw do
 
+devise_for :admin_users, ActiveAdmin::Devise.config
+
+  devise_for :entrepreneurs
+
+  resources :entrepreneurs do
+             resources :messages do
+               collection do
+                 post :delete_selected
+               end
+             end
+           end
+
   resources :findentrepreneurs
 
 
