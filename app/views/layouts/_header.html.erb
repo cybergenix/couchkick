@@ -19,17 +19,22 @@
 
        <% if current_entrepreneur.usertype != nil %>
 
+
+
 							<li>
-								<%= link_to 'dashboard', root_path %>
+								<%= link_to '<i class="icon-dashboard"></i> dashboard'.html_safe, root_path %>
 							</li>
-
+ 							
+ 							<li>
+ 								<%= link_to '<i class="icon-star"></i> opportunities'.html_safe, findentrepreneurs_path %>
+ 							</li>
 
 							<li>
-								<%= link_to 'meet', entrepreneurs_path %>
+								<%= link_to '<i class="icon-user"></i> entrepreneurs'.html_safe, entrepreneurs_path %>
 							</li>
 							
 							<li>
-								<%= link_to "startups", startups_path %>
+								<%= link_to '<i class="icon-bookmark"></i> startups'.html_safe, startups_path %>
 							</li>
 
 							<% end %>

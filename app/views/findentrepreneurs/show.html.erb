@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Whatfor:</b>
+  <%= @findentrepreneur.whatfor %>
+</p>
+
+<p>
+  <b>Location:</b>
+  <%= @findentrepreneur.location %>
+</p>
+
+<p>
+  <b>Usertype:</b>
+  <%= @findentrepreneur.usertype %>
+</p>
+
+
+<%= link_to 'Edit', edit_findentrepreneur_path(@findentrepreneur) %> |
+<%= link_to 'Back', findentrepreneurs_path %>

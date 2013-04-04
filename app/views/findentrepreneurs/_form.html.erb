@@ -1,0 +1,27 @@
+<%= simple_form_for(@findentrepreneur) do |f| %>
+  <% if @findentrepreneur.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@findentrepreneur.errors.count, "error") %> prohibited this findentrepreneur from being saved:</h2>
+
+      <ul>
+      <% @findentrepreneur.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+    <%= f.input :whatfor, collection: [ "networking", "project"], label: "What is your purpose for connecting?", :required => true %>
+
+    <%= f.input :why, as: :text, input_html: { rows: "2" }, :required => true, label: "Give fellow entrepreneurs a reason" %>
+ 
+    <%= f.input :location %>
+ 
+    <%= f.input :usertype, collection: [ "technical", "non-technical", "designer"], label: "what kind of entrepreneur are you looking for", :required => true %>
+
+    <%= f.input :tag_list, label: "Separate Skills by Comma" %>
+
+    <%= f.submit "submit", class: "btn color large" %>
+
+<% end %>

@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  whatfor: MyString
+  location: MyString
+  usertype: MyString
+
+two:
+  whatfor: MyString
+  location: MyString
+  usertype: MyString

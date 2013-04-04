@@ -22,7 +22,7 @@
 			<div class="span4">
 				<div class="tabs">
 					<ul>
-						<li id="tab1" class="current">you</li>
+						<li id="tab1" class="current"><i class="icon-picture"></i> you</li>
 						
 					</ul>
 					<div class="tab-content-wrp">
@@ -31,7 +31,7 @@
     						<%= image_tag current_entrepreneur.image (:medium) %>
     						
     						<p class="btn large"><%= current_entrepreneur.usertype %> entrepreneur</p>
-    						<%= link_to "edit profile", edit_entrepreneur_registration_path, class: "btn large color" %>
+    						<%= link_to '<i class="icon-edit"></i> edit profile'.html_safe, edit_entrepreneur_registration_path, class: "btn large color" %>
     						
     						<div class="date">Skills:</div>
     						<% current_entrepreneur.tag_list.each do |tag| %>
@@ -72,14 +72,14 @@
 			<div class="span4">
 				<div class="tabs">
 					<ul>
-						<li id="tab1" class="current">your stuff</li>
+						<li id="tab1" class="current"><i class="icon-bar-chart"></i> your stuff</li>
 
 						
 					</ul>
 
 					<div class="tab-content-wrp">
     					<div id="tab1-content" class="tab-content active">
-    						<p class="btn large">find a cofounder</p>
+    						<%= link_to "find an entrepreneur", new_findentrepreneur_path, class: "btn large" %>
     						<%= link_to "create a startup", new_startup_path, class: "btn large" %>
     						
     					</div>
@@ -91,7 +91,7 @@
 			<div class="span4">
 				<div class="tabs">
 					<ul>
-						<li id="tab1" class="current">what's going on</li>
+						<li id="tab1" class="current"><i class="icon-pushpin"></i> what's going on</li>
 						
 					</ul>
 					<div class="tab-content-wrp">

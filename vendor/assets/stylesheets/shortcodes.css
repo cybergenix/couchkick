@@ -251,6 +251,7 @@ button.search:hover {
 	overflow: hidden;
 	width: 100%;
 	margin: 20px 0 14px 0;
+	border: 2px dashed rgb(245, 193, 30);
 }
 
 .pricing-table h5 {
