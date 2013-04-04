@@ -19,17 +19,12 @@
 
        <% if current_entrepreneur.usertype != nil %>
 
-<li class="submenu">
-								<%= link_to '<i class="icon-dashboard"></i> dashboard'.html_safe, root_path %>
-								<ul class="dropmenu-active">
-									<li><%= link_to '<i class="icon-comments"></i> messages'.html_safe, entrepreneur_messages_path(current_entrepreneur) %></li>
-									<li><a href="#" ><i class="icon-star"></i> applications</a></li>
-								</ul>
-							</li>
+       								
 
-							<li>
-								
-							</li>
+
+
+							<li><%= link_to '<i class="icon-dashboard"></i> dashboard'.html_safe, root_path %></li>
+
  							
  							<li>
  								<%= link_to '<i class="icon-star"></i> opportunities'.html_safe, findentrepreneurs_path %>
