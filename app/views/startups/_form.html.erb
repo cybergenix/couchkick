@@ -21,10 +21,10 @@
           </ul>
           <div class="tab-content-wrp">
               <div id="tab1-content" class="tab-content active">
-            <%= f.input :name %>
+            <%= f.input :name, :required => true %>
                 <%= f.input :description, as: :text, input_html: { rows: "2" }  %>
-    <%= f.input :location %>
-    <%= f.input :stage %>
+    <%= f.input :location, :required => true %>
+    <%= f.input :stage, :required => true %>
     <%= f.input :founded %>
               </div>
               <div id="tab2-content" class="tab-content">
