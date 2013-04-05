@@ -1,7 +1,5 @@
 Couchkick::Application.routes.draw do
-
-  resources :applications
-
+ 
 
 devise_for :admin_users, ActiveAdmin::Devise.config
 
