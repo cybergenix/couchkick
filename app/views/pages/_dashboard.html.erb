@@ -31,11 +31,12 @@
     						<%= image_tag current_entrepreneur.image (:medium) %>
     						
     						<p class="btn large"><%= current_entrepreneur.usertype %> entrepreneur</p>
-    						<%= link_to '<i class="icon-edit"></i> edit profile'.html_safe, edit_entrepreneur_registration_path, class: "btn large color" %>
+    						<%= link_to "inbox", entrepreneur_messages_path(current_entrepreneur), class: "btn" %>
+    						<%= link_to 'edit profile'.html_safe, edit_entrepreneur_registration_path, class: "btn" %>
     						
     						<div class="date">Skills:</div>
     						<% current_entrepreneur.tag_list.each do |tag| %>
-                <p class="btn small "><%= tag %></p>
+                <p class="btn small "><i class=" icon-tag"></i><%= tag %></p>
                 <% end %>
                 <div class="date">Social:</div>
                 <ul class="social-icons">
