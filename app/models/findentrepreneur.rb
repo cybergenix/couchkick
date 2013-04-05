@@ -3,4 +3,5 @@ class Findentrepreneur < ActiveRecord::Base
   acts_as_taggable
 
   belongs_to :entrepreneur
+  has_many :proposals
 end
