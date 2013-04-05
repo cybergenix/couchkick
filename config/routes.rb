@@ -11,17 +11,15 @@ devise_for :admin_users, ActiveAdmin::Devise.config
                  post :delete_selected
                end
              end
+             resources :findentrepreneurs
            end
 
-  resources :findentrepreneurs
+resources :findentrepreneurs
 
 
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
-
-  devise_for :entrepreneurs
-  resources :entrepreneurs
 
   resources :startups
 
