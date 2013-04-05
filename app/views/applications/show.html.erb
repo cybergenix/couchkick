@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Findentrepreneur:</b>
+  <%= @application.findentrepreneur_id %>
+</p>
+
+<p>
+  <b>Entrepreneur:</b>
+  <%= @application.entrepreneur_id %>
+</p>
+
+<p>
+  <b>Message:</b>
+  <%= @application.message %>
+</p>
+
+
+<%= link_to 'Edit', edit_application_path(@application) %> |
+<%= link_to 'Back', applications_path %>

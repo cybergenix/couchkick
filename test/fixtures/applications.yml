@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  findentrepreneur_id: 1
+  entrepreneur_id: 1
+  message: MyText
+
+two:
+  findentrepreneur_id: 1
+  entrepreneur_id: 1
+  message: MyText

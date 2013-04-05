@@ -25,7 +25,7 @@ class FindentrepreneursController < ApplicationController
   # GET /startups/new
   # GET /startups/new.json
   def new
-    @findentrepreneur = Findentrepreneur.new
+    @findentrepreneur = current_entrepreneur.findentrepreneurs.new
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,13 +35,13 @@ class FindentrepreneursController < ApplicationController
 
   # GET /startups/1/edit
   def edit
-    @findentrepreneur = Findentrepreneur.find(params[:id])
+    @findentrepreneur = current_entrepreneur.findentrepreneurs.find(params[:id])
   end
 
   # POST /startups
   # POST /startups.json
   def create
-    @findentrepreneur = Findentrepreneur.new(params[:findentrepreneur])
+    @findentrepreneur = current_entrepreneur.findentrepreneurs.new(params[:findentrepreneur])
 
     respond_to do |format|
       if @findentrepreneur.save
@@ -57,7 +57,7 @@ class FindentrepreneursController < ApplicationController
   # PUT /startups/1
   # PUT /startups/1.json
   def update
-    @findentrepreneur = Findentrepreneur.find(params[:id])
+    @findentrepreneur = current_entrepreneur.findentrepreneurs.find(params[:id])
 
     respond_to do |format|
       if @findentrepreneur.update_attributes(params[:findentrepreneur])
@@ -73,7 +73,7 @@ class FindentrepreneursController < ApplicationController
   # DELETE /startups/1
   # DELETE /startups/1.json
   def destroy
-    @findentrepreneur = Findentrepreneur.find(params[:id])
+    @findentrepreneur = current_entrepreneur.findentrepreneurs.find(params[:id])
     @findentrepreneur.destroy
 
     respond_to do |format|
