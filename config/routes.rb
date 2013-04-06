@@ -11,6 +11,8 @@ devise_for :admin_users, ActiveAdmin::Devise.config
                  post :delete_selected
                end
              end
+             
+             
            end
 
   ActiveAdmin.routes(self)
