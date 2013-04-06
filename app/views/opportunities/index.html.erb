@@ -1,0 +1,27 @@
+<h1>Listing opportunities</h1>
+
+<table>
+  <tr>
+    <th>Opportunity type</th>
+    <th>Usertype</th>
+    <th>Entrepreneur</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @opportunities.each do |opportunity| %>
+  <tr>
+    <td><%= opportunity.opportunity_type %></td>
+    <td><%= opportunity.usertype %></td>
+    <td><%= opportunity.entrepreneur_id %></td>
+    <td><%= link_to 'Show', [@entrepreneur, opportunity] %></td>
+    <td><%= link_to 'Edit', edit_entrepreneur_opportunity_path(@entrepreneur, opportunity) %></td>
+    <td><%= link_to 'Destroy', [@entrepreneur, opportunity], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Opportunity', new_entrepreneur_opportunity_path(@currententrepreneur) %>

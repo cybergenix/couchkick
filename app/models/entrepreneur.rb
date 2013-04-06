@@ -11,9 +11,7 @@ class Entrepreneur < ActiveRecord::Base
   # attr_accessible :title, :body
   acts_as_taggable
 
-  has_many :findentrepreneurs, :dependent => :destroy
-
-  
+  has_many :opportunities
 
     validates_attachment :image,
                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },

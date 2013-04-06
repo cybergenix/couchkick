@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Opportunity type:</b>
+  <%= @opportunity.opportunity_type %>
+</p>
+
+<p>
+  <b>Usertype:</b>
+  <%= @opportunity.usertype %>
+</p>
+
+<p>
+  <b>Entrepreneur:</b>
+  <%= @opportunity.entrepreneur_id %>
+</p>
+
+
+<%= link_to 'Edit', edit_entrepreneur_opportunity_path(@entrepreneur, @opportunity) %> |
+<%= link_to 'Back', entrepreneur_opportunities_path(@entrepreneur) %>

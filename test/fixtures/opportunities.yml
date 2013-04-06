@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  opportunity_type: MyString
+  usertype: MyString
+  entrepreneur_id: 1
+
+two:
+  opportunity_type: MyString
+  usertype: MyString
+  entrepreneur_id: 1

@@ -1,0 +1,17 @@
+<%= simple_form_for([@entrepreneur, @opportunity]) do |f| %>
+  <% if @opportunity.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@opportunity.errors.count, "error") %> prohibited this opportunity from being saved:</h2>
+
+      <ul>
+      <% @opportunity.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= f.input :opportunity_type, collection: [ "networking", "project", "job"], label: "opportunity type", :required => true %>
+    <%= f.input :usertype, collection: [ "technical", "non-technical", "designer"], label: "what kind of entrepreneur are you looking for", :required => true %>
+    <%= f.submit %>
+<% end %>
