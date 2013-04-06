@@ -110,6 +110,8 @@ ActiveRecord::Schema.define(:version => 20130405185126) do
     t.datetime "updated_at",          :null => false
   end
 
+  add_index "proposals", ["findentrepreneur_id"], :name => "index_proposals_on_findentrepreneur_id"
+
   create_table "startups", :force => true do |t|
     t.string   "name"
     t.text     "description"

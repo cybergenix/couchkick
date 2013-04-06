@@ -13,12 +13,6 @@ devise_for :admin_users, ActiveAdmin::Devise.config
              end
            end
 
-resources :findentrepreneurs do
-  resources :proposals
-
-  end
-resources :proposals
-
   ActiveAdmin.routes(self)
 
   devise_for :admin_users, ActiveAdmin::Devise.config
