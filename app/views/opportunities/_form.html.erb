@@ -1,4 +1,10 @@
-<%= simple_form_for([@entrepreneur, @opportunity]) do |f| %>
+<div class="tabs">
+          <ul>
+            <li id="tab1" class="current">Opportunity</li>
+          </ul>
+          <div class="tab-content-wrp">
+              <div id="tab1-content" class="tab-content active">
+                <%= simple_form_for([@entrepreneur, @opportunity]) do |f| %>
   <% if @opportunity.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@opportunity.errors.count, "error") %> prohibited this opportunity from being saved:</h2>
@@ -10,8 +16,16 @@
       </ul>
     </div>
   <% end %>
-
-    <%= f.input :opportunity_type, collection: [ "networking", "project", "job"], label: "opportunity type", :required => true %>
     <%= f.input :usertype, collection: [ "technical", "non-technical", "designer"], label: "what kind of entrepreneur are you looking for", :required => true %>
-    <%= f.submit %>
+    <%= f.input :opportunity_type, collection: [ "networking", "job"], label: "opportunity type", :required => true %>
+    <%= f.input :tag_list, label: "List skills required" %>     
+    
+    <%= f.input :info, as: :text, input_html: { rows: "2" }, label: "additional info"  %>     
+    <%= f.submit 'submit', class: "btn large color" %>
 <% end %>
+              </div>
+              
+          </div>
+        </div>
+
+

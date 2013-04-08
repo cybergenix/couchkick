@@ -1,27 +1,40 @@
-<h1>Listing opportunities</h1>
+<div class="container">
+  <div class="row">
 
-<table>
-  <tr>
-    <th>Opportunity type</th>
-    <th>Usertype</th>
-    <th>Entrepreneur</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+    <div class="span12">
+
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
+        <h5><span class="color-text">my</span> opportunities</h5>
+      </div>
+    </div>
+  </section>
 
 <% @opportunities.each do |opportunity| %>
-  <tr>
-    <td><%= opportunity.opportunity_type %></td>
-    <td><%= opportunity.usertype %></td>
-    <td><%= opportunity.entrepreneur_id %></td>
-    <td><%= link_to 'Show', [@entrepreneur, opportunity] %></td>
-    <td><%= link_to 'Edit', edit_entrepreneur_opportunity_path(@entrepreneur, opportunity) %></td>
-    <td><%= link_to 'Destroy', [@entrepreneur, opportunity], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-  </tr>
+
+<div class="info-block">
+          <div class="ib-text">
+            <h6><%= opportunity.opportunity_type %> opportunity</h6>
+            <p>created at: <%= opportunity.created_at %></p>
+            <p>looking for <%= opportunity.usertype %> entrepreneur with skills in:</p>
+            <% opportunity.tag_list.each do |tag| %>
+                <p class="btn small "><i class=" icon-tag"></i><%= tag %></p>
+                <% end %>
+              </p>
+            <%= link_to 'show applicants', [@entrepreneur, opportunity], class: "btn color large" %>
+            <%= link_to 'edit', edit_entrepreneur_opportunity_path(@entrepreneur, opportunity) %> | 
+            <%= link_to 'destroy', [@entrepreneur, opportunity], method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+
+
 <% end %>
-</table>
 
-<br />
+</div>
 
-<%= link_to 'New Opportunity', new_entrepreneur_opportunity_path(@currententrepreneur) %>
+</div>
+<div class="span12">
+<%= link_to 'New Opportunity', new_entrepreneur_opportunity_path(@currententrepreneur), class: "btn large color" %>
+</div>
+</div>
