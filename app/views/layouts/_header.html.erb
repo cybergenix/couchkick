@@ -3,56 +3,29 @@
 		<div class="container " >
 			<div class="row">
 				<div class="span5">
+					<!-- Start Logo -->
 					<div id="logo">
 						<%= link_to "couchkick", root_path %>
 						<p>the entrepreneur matchmaker</p>
 					</div>
+					<!-- End Logo -->
 				</div>
 				<div class="span7">
-					
 					<!-- Start Navigation -->
 					<nav>
 						<ul id="navigation" class="pull-right hidden-phone">
-
-<% if entrepreneur_signed_in? %>
-
-
-       <% if current_entrepreneur.usertype != nil %>
-
-       								
-
-
-
-							<li><%= link_to '<i class="icon-dashboard"></i> dashboard'.html_safe, root_path %></li>
-
- 							
- 							
-
-							<li>
-								<%= link_to '<i class="icon-user"></i> entrepreneurs'.html_safe, entrepreneurs_path %>
-							</li>
-							
-							<li>
-								<%= link_to '<i class="icon-bookmark"></i> startups'.html_safe, startups_path %>
-							</li>
-
-							<% end %>
-
-							
-
-							<li><%= link_to 'logout', destroy_entrepreneur_session_path, method: :delete %></li>
-
-							<% else %>
-
-							
-							
-
-							<li><%= link_to "login", new_entrepreneur_session_path, class: "active" %></li>
-							<li><%= link_to "signup", new_entrepreneur_registration_path %></li>
-
-							<% end %>
-
-							<% %>
+	<% if entrepreneur_signed_in? %>
+        <% if current_entrepreneur.usertype != nil %>
+			<li><%= link_to '<i class="icon-dashboard"></i> dashboard'.html_safe, root_path %></li>
+			<li><%= link_to '<i class="icon-star"></i> opportunities'.html_safe, opportunities_path %></li>
+			<li><%= link_to '<i class="icon-user"></i> entrepreneurs'.html_safe, entrepreneurs_path %></li>
+			<li><%= link_to '<i class="icon-bookmark"></i> startups'.html_safe, startups_path %></li>
+		<% end %>
+			<li><%= link_to 'logout', destroy_entrepreneur_session_path, method: :delete %></li>
+		<% else %>
+			<li><%= link_to "login", new_entrepreneur_session_path, class: "active" %></li>
+			<li><%= link_to "signup", new_entrepreneur_registration_path %></li>
+	<% end %>
 						</ul>
 					</nav>
 					<!-- End Navigation -->
@@ -60,4 +33,4 @@
 			</div>
 		</div>
 	</header>
-	<!-- End Header -->
+<!-- End Header -->

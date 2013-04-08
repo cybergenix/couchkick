@@ -1,0 +1,71 @@
+<!-- Start Title -->
+<section id="page-title" class="container">
+        <div class="row">
+            <div class="span10">
+                
+                <div class="span4 searchbar"><form class="form-search">
+					<input placeholder="by name, city, skills..." class="input-medium search-query" type="text">
+					<button type="submit" class="btn search rounded"><i class="icon-search"></i></button>
+				</form></Div>
+
+                <div class="dropdown span3">
+                    <div class="dropmenu">
+                        <p class="menu-title">show</p>
+                        <p class="selected">all opportunities</p>
+                        <i class="icon-chevron-down"></i>
+                    </div>
+                    <div class="dropmenu-active">
+                        <ul class="option-set" data-option-key="filter">
+                            <li><a class="selected drop-selected" href="#filter" data-option-value="*">all opportunities</a></li>
+                            <li><a href="#filter" data-option-value=".digital">developers</a></li>
+                            <li><a href="#filter" data-option-value=".website">designers</a></li>
+                            <li><a href="#filter" data-option-value=".strategy">non-technical</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="span2 hidden-phone">
+                <% if @opportunities.count < 2 %>
+                <p><span class="number"><%= @opportunities.count %></span>opportunity</p>
+                <% else %>
+                <p><span class="number"><%= @opportunities.count %></span>opportunities</p>
+                <% end %>
+            </div>
+        </div>
+        <div class="row">
+            <hr class="span12 clear-bottom">
+        </div>
+    </section>
+    <!-- End Title -->
+    <!-- Start Opportunities -->
+<section id="team">
+		<div class="container">
+			<div class="row">
+    
+
+<% @opportunities.each do |opportunity| %>
+
+<div class="row">
+			<div class="span3">
+				<div class="pricing-table">
+					<h5>by <%= opportunity.entrepreneur.first_name %>
+						<%= image_tag opportunity.entrepreneur.image(:medium) %></h5>
+					<div class="pt-price"><%= opportunity.opportunity_type %> opportunity
+					</div>
+					<ul>
+						<li>Looking for a <%= opportunity.usertype %> entrepreneur</li>
+						<li></li>
+					</ul>
+					<%= link_to 'show more', [opportunity.entrepreneur, opportunity], class: "btn" %>
+				</div>
+			</div>
+			
+	</div>
+  
+<% end %>
+
+</div>
+</div>
+</section>
+
+<!-- End Opportunities -->

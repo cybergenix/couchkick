@@ -1,57 +1,40 @@
 <% if current_entrepreneur == @entrepreneur %>
-
-<div class="container">
-  <div class="row">
-
-    <div class="span12">
-
-<section id="title" class="container">
+  <div class="container">
     <div class="row">
       <div class="span12">
-        <h5><span class="color-text">inbox</span></h5>
+        <section id="title" class="container">
+          <div class="row">
+            <div class="span12">
+              <h5><span class="color-text">inbox</span></h5>
+            </div>
+          </div>
+        </section>
+        <%= form_tag delete_selected_entrepreneur_messages_path(@entrepreneur, :method => :post) do %>
+          <% if params[:mailbox] == "sent" %>
+            <%= render 'messages/sent' %>
+          <% else %>
+            <%= render 'messages/inbox' %>
+          <% end %>
+        <% end %>
       </div>
     </div>
-  </section>
-
-
-<%= form_tag delete_selected_entrepreneur_messages_path(@entrepreneur, :method => :post) do %>
-	<% if params[:mailbox] == "sent" %>
-			<%= render 'messages/sent' %>
-	<% else %>
-			<%= render 'messages/inbox' %>
-		<% end %>
-<% end %>
-
+  <div class="span12">
+  </div>
 </div>
-
-</div>
-<div class="span12">
-</div>
-
-</div>
-
 <% else %>
-
-<div class="container">
-  <div class="row">
-
-    <div class="span12">
-
-<section id="title" class="container">
+  <div class="container">
     <div class="row">
       <div class="span12">
-        <h5><span class="color-text">we're sorry</span> seems like your lost...</h5>
+        <section id="title" class="container">
+          <div class="row">
+            <div class="span12">
+              <h5><span class="color-text">we're sorry</span> seems like your lost...</h5>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
-  </section>
-
-</div>
-
-</div>
-<div class="span12">
-</div>
-
-</div>
-
-
+    <div class="span12">
+    </div>
+  </div>
 <% end %>

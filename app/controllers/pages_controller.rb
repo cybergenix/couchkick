@@ -19,4 +19,8 @@ class PagesController < ApplicationController
   def privacy
   end
 
+  def opportunities
+    @opportunities = Opportunity.all
+  end
+
 end

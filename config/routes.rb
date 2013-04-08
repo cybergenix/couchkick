@@ -26,13 +26,15 @@ devise_for :admin_users, ActiveAdmin::Devise.config
 
   root :to => 'pages#home'
 
-  get "pages/about"
+  match "about" => "pages#about"
 
-  get "pages/faq"
+  match "faq" => "pages#faq"
 
-  get "pages/terms"
+  match "terms" => "pages#terms"
 
-  get "pages/privacy"
+  match "privacy" => "pages#privacy"
+
+  match "opportunities" => "pages#opportunities"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

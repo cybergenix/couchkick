@@ -7,7 +7,7 @@
 							<%= image_tag entrepreneur.image(:medium) %>
 						</div>
 						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
-						<p class="profile-position">Chief Executive Officer</p>
+						<p class="profile-position"><%= entrepreneur.usertype %> entrepreneur</p>
 						<ul class="social-icons">
 						<% if entrepreneur.facebook != "" %>
 						<li><a href=<%= entrepreneur.facebook %>><i class="icon-facebook"></i></a></li>
@@ -29,8 +29,13 @@
 					<div class="overlay-wrp">
 	        			<div class="overlay"></div>
 						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
-						<p class="profile-position">Chief Executive Officer</p>
+						<p class="profile-position"><%= entrepreneur.usertype %></p>
 						<p class="profile-quote">is looking to meet and to mentor</p>
+
+						<% entrepreneur.tag_list.each do |tag| %>
+               				 <p class="btn small "><i class=" icon-tag"></i><%= tag %></p>
+               			 <% end %>
+               			 
 						<%= link_to "talk", root_path, class: "btn large" %>
 						<%= link_to "view profile", root_path, class: "btn large" %>
 					</div>

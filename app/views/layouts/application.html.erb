@@ -1,14 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>couchkick - the entrepreneur matchmaker</title>
+  <title>couchkick</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
-
 <body>
-
 <%= render 'layouts/header' %>
 <% flash.each do |type, message| %>
     <div class="alert <%= flash_class type %>">
