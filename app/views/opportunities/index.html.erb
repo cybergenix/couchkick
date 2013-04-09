@@ -11,25 +11,7 @@
     </div>
   </section>
 
-<% @opportunities.each do |opportunity| %>
-
-<div class="info-block">
-          <div class="ib-text">
-            <h6><%= opportunity.opportunity_type %> opportunity</h6>
-            <p>created at: <%= opportunity.created_at %></p>
-            <p>looking for <%= opportunity.usertype %> entrepreneur with skills in:</p>
-            <% opportunity.tag_list.each do |tag| %>
-                <p class="btn small "><i class=" icon-tag"></i><%= tag %></p>
-                <% end %>
-              </p>
-            <%= link_to 'show applicants', [@entrepreneur, opportunity], class: "btn color large" %>
-            <%= link_to 'edit', edit_entrepreneur_opportunity_path(@entrepreneur, opportunity) %> | 
-            <%= link_to 'destroy', [@entrepreneur, opportunity], method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-        </div>
-
-
-<% end %>
+<%= render @opportunities %>
 
 </div>
 

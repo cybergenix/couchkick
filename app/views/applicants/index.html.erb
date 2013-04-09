@@ -1,4 +1,4 @@
 <h1>Applicants#index</h1>
 <% @applicants.each do |applicant| %>
-<%= applicant.content %>
+<p><%= applicant.content %> - <%= applicant.applicant_id %></p>
 <% end %>

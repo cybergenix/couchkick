@@ -19,7 +19,9 @@ class ApplicantsController < ApplicationController
   end
 
   def create
+
     @applicant = @opportunity.applicants.new(params[:applicant])
+    @applicant.entrepreneur_id = current_entrepreneur.id
     respond_to do |format|
       if @applicant.save
         format.html { redirect_to [@entrepreneur, @opportunity], notice: 'Application was successfully created.' }
@@ -31,4 +33,5 @@ class ApplicantsController < ApplicationController
     end
   end
 end
+
 

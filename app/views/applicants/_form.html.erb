@@ -1,4 +1,4 @@
-<%= form_for [@entrepreneur, @opportunity, @applicant] do |f| %>
+<%= simple_form_for [@entrepreneur, @opportunity, @applicant] do |f| %>
   <% if @applicant.errors.any? %>
     <div class="error_messages">
       <h2>Please correct the following errors.</h2>
@@ -10,10 +10,10 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.text_area :content, rows: 8 %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
+  <div class="span12">
+    <%= f.input :content, as: :text, input_html: { rows: "2" }, label: "Please enter the reason why you want this badly" %>
+    <%= f.submit "Apply", class: "btn large color" %>
+</div>
+    
+
 <% end %>

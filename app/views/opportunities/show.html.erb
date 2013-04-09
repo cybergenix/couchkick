@@ -1,20 +1,63 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
 
-<p>
-  <b>Opportunity type:</b>
-  <%= @opportunity.opportunity_type %>
-</p>
+    <div class="span12">
 
-<p>
-  <b>Usertype:</b>
-  <%= @opportunity.usertype %>
-</p>
+<section id="title" class="container">
+    <div class="row">
+      <div class="span12">
+        <h5><span class="color-text">my</span> applicants</h5>
+      </div>
+    </div>
+  </section>
 
-<p>
-  <b>Entrepreneur:</b>
-  <%= @opportunity.entrepreneur_id %>
-</p>
+<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>First Name</th>
+							<th>Last Name</th>
+							<th>Entrepreneur Type</th>
+							<th>Applied at</th>
+							<th>show message</th>
+							<th>show entrepreneur</th>
+							<th>download cv</th>
+							<th>match percentage</th>
+						</tr>
+					</thead>
+					<tbody>
+
+<% @opportunity.applicants.each do |applicant| %>
+
+<% @applicantentrepreneur = Entrepreneur.find(applicant.entrepreneur_id) %>
+
+		<tr>
+			<td><%= @applicantentrepreneur.first_name %></td>
+			<td><%= @applicantentrepreneur.last_name %></td>
+			<td><%= @applicantentrepreneur.usertype %></td>
+			<td><%= applicant.created_at %></td>
+			<td><%= applicant.content %></td>
+			<td><%= link_to 'show', entrepreneur_path(@applicantentrepreneur.id) %></td>
+			<% if @applicantentrepreneur.cv_file_name == nil %>
+			<td>not available</td>
+			<% else %>
+			<td><%= link_to 'my cv', @applicantentrepreneur.cv.url %></td>
+			<% end %>
+			<td></td>
+		</tr>
+<% end %>
+</tbody>
+</table>
 
 
-<%= link_to 'Edit', edit_entrepreneur_opportunity_path(@entrepreneur, @opportunity) %> |
 <%= link_to 'Back', entrepreneur_opportunities_path(@entrepreneur) %>
+
+</div>
+
+</div>
+<div class="span12">
+</div>
+</div>
+
+
+						
+							
