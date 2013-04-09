@@ -4,6 +4,10 @@ Couchkick::Application.routes.draw do
   
 
 
+  get "comments/index"
+
+  get "comments/new"
+
 devise_for :admin_users, ActiveAdmin::Devise.config
 
   devise_for :entrepreneurs
@@ -14,7 +18,9 @@ devise_for :admin_users, ActiveAdmin::Devise.config
                  post :delete_selected
                end
              end
-             resources :opportunities
+             resources :opportunities do
+              resources :applicants
+             end
            end
 
   ActiveAdmin.routes(self)
