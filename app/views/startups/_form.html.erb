@@ -41,7 +41,9 @@
     <%= f.input :link2, label: "Facebook Page" %>
     <%= f.input :link3, label: "Other Social" %>
               </div>
-              <div id="tab4-content" class="tab-content"></div>
+              <div id="tab4-content" class="tab-content">
+                <%= f.association :entrepreneurs, as: :check_boxes, :label_method => :email, :value_method => :id %>
+              </div>
           </div>
         </div>
 

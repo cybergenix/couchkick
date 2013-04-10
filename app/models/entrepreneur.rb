@@ -12,6 +12,8 @@ class Entrepreneur < ActiveRecord::Base
   acts_as_taggable
 
   has_many :opportunities
+  has_many :entrepreneurstartups
+  has_many :entrepreneurs, :through => :entrepreneurstartups
 
     validates_attachment :image,
                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },

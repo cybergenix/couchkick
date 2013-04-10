@@ -83,6 +83,9 @@
     						<%= link_to "My Opportunities", entrepreneur_opportunities_path(@current_entrepreneur), class: "btn large" %>
     						<%= link_to "New Opportunity", new_entrepreneur_opportunity_path(@current_entrepreneur), class: "btn large" %>
     						<%= link_to "create a startup", new_startup_path, class: "btn large" %>
+    						<% current_entrepreneur.entrepreneurstartups.each do |es| %>
+    						<%= link_to "#{es.startup.name}", startup_path(es.startup.id), class: "btn color large" %>
+    						<% end %>
     						
     					</div>
     					
