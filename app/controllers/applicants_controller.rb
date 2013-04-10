@@ -1,4 +1,5 @@
 class ApplicantsController < ApplicationController
+  before_filter :authenticate_entrepreneur!
   before_filter :getentrepreneur
 	before_filter :getopportunity
 
@@ -33,5 +34,3 @@ class ApplicantsController < ApplicationController
     end
   end
 end
-
-

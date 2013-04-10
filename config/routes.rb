@@ -1,18 +1,10 @@
 Couchkick::Application.routes.draw do
  
-
-  
-
-
-  get "comments/index"
-
-  get "comments/new"
-
 devise_for :admin_users, ActiveAdmin::Devise.config
 
-  devise_for :entrepreneurs
+devise_for :entrepreneurs
 
-  resources :entrepreneurs do
+resources :entrepreneurs do
              resources :messages do
                collection do
                  post :delete_selected

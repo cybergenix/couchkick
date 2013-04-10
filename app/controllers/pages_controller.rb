@@ -1,4 +1,5 @@
 class PagesController < ApplicationController
+  before_filter :authenticate_entrepreneur!, except: [:home]
   def home
     if entrepreneur_signed_in?
        if current_entrepreneur.usertype == nil
