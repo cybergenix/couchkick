@@ -41,11 +41,9 @@
 <section id="team">
 		<div class="container">
 			<div class="row">
-    
 
 <% @opportunities.each do |opportunity| %>
 
-<div class="row">
 			<div class="span3">
 				<div class="pricing-table">
 					<h5>by <%= opportunity.entrepreneur.first_name %></h5>
@@ -61,8 +59,7 @@
 					</ul>
 					<%= link_to 'show more', [opportunity.entrepreneur, opportunity], class: "btn" %>
 				</div>
-			</div>
-			
+
 	</div>
   
 <% end %>
