@@ -1,8 +1,9 @@
 Couchkick::Application.routes.draw do
  
 devise_for :admin_users, ActiveAdmin::Devise.config
+            
 
-devise_for :entrepreneurs
+devise_for :entrepreneurs, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
 resources :entrepreneurs do
              resources :messages do

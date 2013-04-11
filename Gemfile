@@ -8,6 +8,7 @@ gem 'devise'
 gem 'acts-as-taggable-on'
 gem 'activeadmin'
 gem 'simple-private-messages', '0.0.0', :git => 'git://github.com/jongilbraith/simple-private-messages.git'
+gem 'omniauth-twitter'
 
 
 # Bundle edge Rails instead:

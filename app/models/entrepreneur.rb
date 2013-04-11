@@ -3,7 +3,7 @@ class Entrepreneur < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   # Setup accessible (or protected) attributes for your model
   attr_accessible :email, :password, :password_confirmation, :remember_me, :first_name, :last_name,
@@ -11,9 +11,40 @@ class Entrepreneur < ActiveRecord::Base
   # attr_accessible :title, :body
   acts_as_taggable
 
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_create do |entrepreneur|
+      entrepreneur.provider = auth.provider
+      entrepreneur.uid = auth.uid
+    end
+  end
+
+  def self.new_with_session(params, session)
+  if session["devise.entrepreneur_attributes"]
+    new(session["devise.entrepreneur_attributes"], without_protection: true) do |entrepreneur|
+      entrepreneur.attributes = params
+      entrepreneur.valid?
+    end
+  else
+    super
+  end
+end
+
+def password_required?
+  super && provider.blank?
+end
+
+def update_with_password(params, *options)
+  if encrypted_password.blank?
+    update_attributes(params, *options)
+  else
+    super
+  end
+end
+
+
   has_many :opportunities
   has_many :entrepreneurstartups
-  has_many :entrepreneurs, :through => :entrepreneurstartups
+  has_many :startups, :through => :entrepreneurstartups
 
     validates_attachment :image,
                             content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
