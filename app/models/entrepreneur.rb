@@ -15,6 +15,9 @@ class Entrepreneur < ActiveRecord::Base
     where(auth.slice(:provider, :uid)).first_or_create do |entrepreneur|
       entrepreneur.provider = auth.provider
       entrepreneur.uid = auth.uid
+      entrepreneur.email = auth.info.email
+      entrepreneur.first_name = auth.info.first_name
+      entrepreneur.last_name = auth.info.last_name
     end
   end
 
