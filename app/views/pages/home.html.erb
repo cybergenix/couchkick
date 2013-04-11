@@ -5,6 +5,10 @@
 <% else %>
 	<!-- Start Hero Carousel -->
 	<section class="hero">
+		<div class="videohome">
+			<iframe src="http://player.vimeo.com/video/60211897" width="600" height="335" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+		
+	</div>
 	</section>
 	</section>
 	
@@ -14,7 +18,9 @@
 	<section class="intro container">
 		<div class="row">
 			<div class="span12">
+
 				<p>we help <%= link_to "entrepreneurs", entrepreneurs_path %> find each other</p>
+				<p><%= link_to image_tag("../img/fb-connect-large.png"), root_url + 'entrepreneurs/auth/facebook' %></p>
 			</div>
 		</div>
 	</section>

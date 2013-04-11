@@ -16,6 +16,8 @@
 <section id="title" class="container">
     <div class="row">
       <div class="span12">
+        <%= link_to image_tag("../img/fb-connect-large.png"), root_url + 'entrepreneurs/auth/facebook' %>
+        <h5>or</h5>
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
     <%= f.input :email, :required => true, :autofocus => true %>

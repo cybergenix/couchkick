@@ -6,7 +6,7 @@ class OmniauthCallbacksController < ApplicationController
 			sign_in_and_redirect entrepreneur
 		else
 			session["devise.entrepreneur_attributes"] = entrepreneur.attributes
-			redirect_to new_entrepreneur_registration_url
+			redirect_to new_entrepreneur_registration_path
 		end
 	end
 

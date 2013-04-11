@@ -18,6 +18,8 @@ class Entrepreneur < ActiveRecord::Base
       entrepreneur.email = auth.info.email
       entrepreneur.first_name = auth.info.first_name
       entrepreneur.last_name = auth.info.last_name
+      entrepreneur.oauth_token = auth.credentials.token
+      entrepreneur.oauth_expires_at = Time.at(auth.credentials.expires_at)
     end
   end
 
@@ -43,7 +45,6 @@ def update_with_password(params, *options)
     super
   end
 end
-
 
   has_many :opportunities
   has_many :entrepreneurstartups
