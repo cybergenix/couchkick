@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130410155333) do
+ActiveRecord::Schema.define(:version => 20130410164220) do
 
   create_table "active_admin_comments", :force => true do |t|
     t.string   "resource_id",   :null => false
@@ -88,6 +88,11 @@ ActiveRecord::Schema.define(:version => 20130410155333) do
     t.string   "skype"
     t.string   "prefmethod"
     t.string   "usertype"
+    t.string   "address"
+    t.string   "address_latitude"
+    t.string   "address_longitude"
+    t.string   "address_locality"
+    t.string   "address_country"
   end
 
   add_index "entrepreneurs", ["email"], :name => "index_entrepreneurs_on_email", :unique => true
