@@ -29,16 +29,16 @@
             <li id="tab5">cv</li>
 
             <li id="tab6">contacts</li>
+            <li id="tab7">account's details</li>
           </ul>
           <div class="tab-content-wrp">
               <div id="tab1-content" class="tab-content active">
 
                 <%= f.input :first_name, :required => true, :autofocus => true, label: "first name" %>
                 <%= f.input :last_name, :required => true, :autofocus => true, label: "last name" %>
-                <%= f.input :email, :required => false, :autofocus => true %>
+                
 
-               <%= f.input :password, :autocomplete => "off", :required => false %>
-              <%= f.input :password_confirmation, :required => false %>
+               
   <div id="usertype">
     <%= f.input :usertype, collection: [ "technical", "non-technical", "designer"], label: "select what best user type suits you", :required => true %></div>
   
@@ -83,6 +83,11 @@
                 <%= f.input :skype %>
                 <%= f.input :prefmethod, collection: [ "phone", "skype", "both"], default: "phone", label: "best method for contact" %>
               </div>
+              <div id="tab7-content" class="tab-content">
+                <%= f.input :email, :required => false, :autofocus => true %>
+              <%= f.input :password, :autocomplete => "off", :required => false %>
+              <%= f.input :password_confirmation, :required => false %>
+            </div>
           </div>
         </div>
 
