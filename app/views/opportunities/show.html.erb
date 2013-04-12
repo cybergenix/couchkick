@@ -34,7 +34,7 @@
 			<td><%= @applicantentrepreneur.first_name %></td>
 			<td><%= @applicantentrepreneur.last_name %></td>
 			<td><%= @applicantentrepreneur.usertype %></td>
-			<td><%= applicant.created_at %></td>
+			<td><%= time_ago_in_words applicant.created_at %></td>
 			<td><%= applicant.content %></td>
 			<td><%= link_to 'show', entrepreneur_path(@applicantentrepreneur.id) %></td>
 			<% if @applicantentrepreneur.cv_file_name == nil %>

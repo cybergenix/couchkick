@@ -23,7 +23,7 @@ class Entrepreneur < ActiveRecord::Base
     end
   end
 
-  def self.new_with_session(params, session)
+def self.new_with_session(params, session)
   if session["devise.entrepreneur_attributes"]
     new(session["devise.entrepreneur_attributes"], without_protection: true) do |entrepreneur|
       entrepreneur.attributes = params
@@ -46,13 +46,13 @@ def update_with_password(params, *options)
   end
 end
 
-  has_many :opportunities, :dependent => :destroy
-  has_many :entrepreneurstartups
-  has_many :startups, :through => :entrepreneurstartups
+has_many :opportunities, :dependent => :destroy
+has_many :entrepreneurstartups
+has_many :startups, :through => :entrepreneurstartups
 
-    validates_attachment :image,
-                            content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
-                            size: { less_than: 5.megabytes }
+validates_attachment :image,
+                        content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },
+                        size: { less_than: 5.megabytes }
 
 
 
@@ -60,4 +60,9 @@ end
   has_attached_file :cv
 
   has_private_messages
+
+  scope :technical, where(usertype: "technical")
+  scope :nontechnical, where(usertype: "non-technical")
+  scope :designer, where(usertype: "designer")
+  scope :newest, order("created_at desc")
 end
