@@ -1,4 +1,5 @@
 class Entrepreneur < ActiveRecord::Base
+  after_create :send_welcome_email
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
@@ -65,4 +66,10 @@ validates_attachment :image,
   scope :nontechnical, where(usertype: "non-technical")
   scope :designer, where(usertype: "designer")
   scope :newest, order("created_at desc")
+
+  private 
+
+  def send_welcome_email
+    EntrepreneurMailer.welcome(self).deliver
+  end
 end
