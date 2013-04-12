@@ -46,7 +46,7 @@ def update_with_password(params, *options)
   end
 end
 
-  has_many :opportunities
+  has_many :opportunities, :dependent => :destroy
   has_many :entrepreneurstartups
   has_many :startups, :through => :entrepreneurstartups
 

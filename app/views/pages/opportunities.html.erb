@@ -44,22 +44,7 @@
 
 <% @opportunities.each do |opportunity| %>
 
-			<div class="span3">
-				<div class="pricing-table">
-					<h5>by <%= opportunity.entrepreneur.first_name %></h5>
-					<div class="pt-price"><%= opportunity.opportunity_type %> opportunity
-					</div>
-					<ul>
-						<li>Looking for a <%= opportunity.usertype %> entrepreneur</li>
-                        <li><% opportunity.tag_list.each do |tag| %>
-                <p><i class=" icon-tag"></i><%= tag %></p>
-                <% end %></li>
-
-						<li></li>
-					</ul>
-					<%= link_to 'show', [opportunity.entrepreneur, opportunity], class: "btn" %>
-				</div>
-	</div>
+<%= opportunity.entrepreneur.id %>
   
 <% end %>
 
