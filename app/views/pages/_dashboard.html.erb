@@ -98,13 +98,13 @@
 			<div class="span4">
 				<div class="tabs">
 					<ul>
-						<li id="tab1" class="current"><i class="icon-pushpin"></i> fellow entrepreneurs</li>
+						<li id="tab1" class="current"><i class="icon-pushpin"></i>entrepreneurs you follow</li>
 						
 					</ul>
 					<div class="tab-content-wrp">
     					<div id="tab1-content" class="tab-content active">
     						<ul>
-  <% for friendship in current_entrepreneur.friendships %>
+  <% current_entrepreneur.friendships.each do |friendship| %>
   <li>
   <div class="span1"><%= image_tag friendship.friend.image (:medium) %></div>
   <div class="span2">
@@ -113,21 +113,24 @@
   <% end %>
 </ul>
 
-<p>Pending Friend Requests</p>
+<p>entrepreneurs following you</p>
 <ul>
-  <% for entrepreneur in current_entrepreneur.inverse_friends %>
+  <% current_entrepreneur.inverse_friends.each do |entrepreneur| %>
     <li>
   <div class="span1"><%= image_tag entrepreneur.image (:medium) %></div>
   <div class="span2">
-      <%= entrepreneur.first_name %> <%= entrepreneur.last_name %></div></li>
+      <%= entrepreneur.first_name %> <%= entrepreneur.last_name %>
+  </div></li>
   <% end %>
   
 </ul>
+
     					</div>
     					
 					</div>
 				</div>
 
 			</div>
+
 		</div>		
 	</section>

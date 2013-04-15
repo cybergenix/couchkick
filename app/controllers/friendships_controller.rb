@@ -20,4 +20,7 @@ class FriendshipsController < ApplicationController
       format.html { redirect_to root_path, notice: 'Removed Friendship'}
     end
   end
+
+  
 end
+
