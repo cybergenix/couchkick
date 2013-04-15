@@ -27,6 +27,7 @@
 					</ul>
 					<div class="tab-content-wrp">
     					<div id="tab1-content" class="tab-content active">
+    						<p><%= current_entrepreneur.first_name %> <%= current_entrepreneur.last_name %></p>
     						
     						<%= image_tag current_entrepreneur.image (:medium) %>
     						
@@ -97,12 +98,32 @@
 			<div class="span4">
 				<div class="tabs">
 					<ul>
-						<li id="tab1" class="current"><i class="icon-pushpin"></i> what's going on</li>
+						<li id="tab1" class="current"><i class="icon-pushpin"></i> fellow entrepreneurs</li>
 						
 					</ul>
 					<div class="tab-content-wrp">
     					<div id="tab1-content" class="tab-content active">
-    						
+    						<ul>
+  <% for friendship in current_entrepreneur.friendships %>
+  <li>
+  <div class="span1"><%= image_tag friendship.friend.image (:medium) %></div>
+  <div class="span2">
+      <%= friendship.friend.first_name %> <%= friendship.friend.last_name %>
+      (<%= link_to "remove", friendship, :method => :delete %>)</div></li>
+  <% end %>
+</ul>
+
+<p>Pending Friend Requests</p>
+<ul>
+  <% for entrepreneur in current_entrepreneur.inverse_friends %>
+    <li>
+  <div class="span1"><%= image_tag entrepreneur.image (:medium) %></div>
+  <div class="span2">
+      <%= entrepreneur.first_name %> <%= entrepreneur.last_name %>
+      (<%= link_to "remove", friendship, :method => :delete %>)</div></li>
+  <% end %>
+  
+</ul>
     					</div>
     					
 					</div>

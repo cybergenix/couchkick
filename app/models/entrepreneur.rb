@@ -50,6 +50,10 @@ end
 has_many :opportunities, :dependent => :destroy
 has_many :entrepreneurstartups
 has_many :startups, :through => :entrepreneurstartups
+has_many :friendships
+has_many :friends, :through => :friendships
+has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+has_many :inverse_friends, :through => :inverse_friendships, :source => :entrepreneur
 
 validates_attachment :image,
                         content_type: { content_type: ['image/jpeg', 'image/jpg', 'image/png', 'image/gif'] },

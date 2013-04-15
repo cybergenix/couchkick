@@ -81,6 +81,8 @@ class OpportunitiesController < ApplicationController
     end
   end
 
+
+
   # DELETE /startups/1
   # DELETE /startups/1.json
   def destroy

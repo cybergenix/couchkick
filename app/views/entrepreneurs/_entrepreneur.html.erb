@@ -33,11 +33,8 @@
 						<p class="profile-position"><% entrepreneur.tag_list.each do |tag| %>
                				 <i class=" icon-tag"></i> <%= tag %> 
                			 <% end %></p>
-						<%= link_to "i know him", entrepreneur_path(entrepreneur), class:"btn large" %>
-						
-
-						
-               			 
+						<%= link_to "i know him", friendships_path(:friend_id => entrepreneur), :method => :post, class:"btn large" %>
+						 
 						<%= link_to "recommend", root_path, class: "btn large" %>
 						<%= link_to "view profile", entrepreneur_path(entrepreneur), class:"btn large" %>
 					</div>

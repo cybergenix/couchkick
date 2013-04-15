@@ -15,5 +15,7 @@ class EntrepreneursController < ApplicationController
       format.json { render json: @entrepreneur }
     end
   end
+
+  
 end
 
