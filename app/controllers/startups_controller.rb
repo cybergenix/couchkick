@@ -4,7 +4,6 @@ class StartupsController < ApplicationController
   # GET /startups.json
   def index
     @startups = Startup.all
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @startups }

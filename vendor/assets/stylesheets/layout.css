@@ -14,6 +14,8 @@
 	/* Common Styles ------------------------------------------ */
 	
 	html { font-size: 100%; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+
+
 	
 	body {
 		font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -32,6 +34,8 @@
     	margin-top: 100px;
     	width: 600px;
 	}
+
+	
 
 	strong, b {
 		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; /* iOS fix for Helvetica Neue Light */
@@ -579,9 +583,15 @@
 	
 	#team {
 		width: 100%;
-		background: #232527;
+		background-color: #232527;
 		margin: 85px 0;
 		padding: 70px 0 60px 0;
+	}
+
+	#projects {
+		background-color: #232527;
+		padding-top: 30px;
+
 	}
 	
 	.big-title {

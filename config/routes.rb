@@ -5,6 +5,8 @@ devise_for :admin_users, ActiveAdmin::Devise.config
 
 devise_for :entrepreneurs, controllers: {omniauth_callbacks: "omniauth_callbacks"}
 
+match 'auth/failure', to: redirect('/')
+
 resources :entrepreneurs do
              resources :messages do
                collection do

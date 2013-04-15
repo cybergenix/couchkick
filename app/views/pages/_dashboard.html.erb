@@ -56,8 +56,8 @@
 						
 						<% end %>
 						</ul>
-						<div class="date">you have</div>
-				<p class="btn color large">50 entrepreneur points</p>
+						<div class="date">you know</div>
+				<p class="btn color large">139 entrepreneurs</p>
 				
 
     					</div>
@@ -85,6 +85,7 @@
     						<%= link_to "create a startup", new_startup_path, class: "btn large" %>
     						<% current_entrepreneur.entrepreneurstartups.each do |es| %>
     						<%= link_to "#{es.startup.name}", startup_path(es.startup.id), class: "btn color large" %>
+    					
     						<% end %>
     						
     					</div>

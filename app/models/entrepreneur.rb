@@ -57,7 +57,7 @@ validates_attachment :image,
 
 
 
-  has_attached_file :image, styles: { medium: "320x240#"}, :default_url => '../img/defaultprofile.jpg'
+  has_attached_file :image, styles: { medium: "535x535#"}, :default_url => '../img/defaultprofile.jpg'
   has_attached_file :cv
 
   has_private_messages

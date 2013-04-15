@@ -38,13 +38,32 @@
     </section>
     <!-- End Title -->
     <!-- Start Opportunities -->
-<section id="team">
+<section id="projects">
 		<div class="container">
 			<div class="row">
 
 <% @opportunities.each do |opportunity| %>
 
-<%= opportunity.entrepreneur.id %>
+<div class="tabs">
+                    <ul>
+                        <li id="tab1" class="current"><%= opportunity.opportunity_type %> - posted <%= time_ago_in_words opportunity.created_at %> ago</li>
+                     
+                    </ul>
+                    <div class="tab-content-wrp">
+                        <div id="tab1-content" class="tab-content active">
+                            <div class="span1"><%= image_tag opportunity.entrepreneur.image(:medium) %></div>
+                            <div class="span2"><p><%= opportunity.entrepreneur.first_name %> <%= opportunity.entrepreneur.last_name %></p><p class="btn "><%= opportunity.entrepreneur.usertype %></p></div>
+                            <div class="span5"><p>Looking for:</p><p>Category</p><p>Offering</p></div>
+                           <div class="span3"><%= link_to 'more', entrepreneur_opportunity_path(opportunity.entrepreneur, opportunity), class: "btn  color" %><%= link_to 'apply', new_entrepreneur_opportunity_applicant_path(opportunity.entrepreneur, opportunity), class: "btn  color" %></div>
+
+                           
+
+
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="span12"></p></div>
   
 <% end %>
 

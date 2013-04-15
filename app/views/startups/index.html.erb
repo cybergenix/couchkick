@@ -2,8 +2,13 @@
 <section id="page-title" class="container">
         <div class="row">
             <div class="span10">
-                <h2>startups</h2>
-                <div class="dropdown">
+                
+                <div class="span4 searchbar"><form class="form-search">
+                    <input placeholder="by name, city, skills..." class="input-medium search-query" type="text">
+                    <button type="submit" class="btn search rounded"><i class="icon-search"></i></button>
+                </form></Div>
+
+                <div class="dropdown span3">
                     <div class="dropmenu">
                         <p class="menu-title">show</p>
                         <p class="selected">all startups</p>
@@ -11,10 +16,10 @@
                     </div>
                     <div class="dropmenu-active">
                         <ul class="option-set" data-option-key="filter">
-                            <li><a class="selected drop-selected" href="#filter" data-option-value="*">All projects</a></li>
-                            <li><a href="#filter" data-option-value=".digital">Digital</a></li>
-                            <li><a href="#filter" data-option-value=".website">Website</a></li>
-                            <li><a href="#filter" data-option-value=".strategy">Strategy</a></li>
+                            <li><a class="selected drop-selected" href="#filter" data-option-value="*">all startups</a></li>
+                            <li><a href="#filter" data-option-value=".digital">developers</a></li>
+                            <li><a href="#filter" data-option-value=".website">designers</a></li>
+                            <li><a href="#filter" data-option-value=".strategy">non-technical</a></li>
                         </ul>
                     </div>
                 </div>
@@ -34,12 +39,14 @@
     <!-- End Title -->
     
     <!-- Start Projects -->
-    <section id="projects" class="container">
+    
+    <section id="projects"><div class="container">
         <div id="posts" class="isotope row">
    
    <%= render @startups %>
+</div></div>
             
-        </div>  
+
     </section>
     <!-- End Projects -->
 

@@ -40,3 +40,4 @@ $ ->
     $(".hero-carousel").heroCarousel
       easing: "easeOutExpo"
       css3pieFix: true
+

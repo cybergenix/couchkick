@@ -1,17 +1,16 @@
 <div class="post item span4 isotope-item website">
-                <%= link_to startup, class: "project-wrp hover-down" do %>
-                
-                    <div class="content-wrp">
-                        <%= image_tag startup.logo(:medium) %>
-                        <p class="project-name"><%= startup.name %></p>
-                        <p class="project-desc"><%= startup.location %></p>
-                    </div>
-                    <div class="overlay-wrp">
-                        <div class="overlay"></div>
-                        <p class="project-name"><%= startup.name %></p>
-                        <p class="project-desc"><%= startup.description %></p>
-                        <p class="project-date">Founded in <%= startup.founded %></p>
-                        <i class="icon-arrow-right"></i>
-                    </div>
-                <% end %>
-            </div>
+    <%= link_to startup, class: "project-wrp hover-down" do %>   
+        <div class="content-wrp">
+            <%= image_tag startup.logo(:medium) %>
+            <p class="project-name"><%= startup.name %></p>
+            <p class="project-desc"><%= startup.location %></p>
+        </div>
+        <div class="overlay-wrp">
+            <div class="overlay"></div>
+            <p class="project-name"><%= startup.name %></p>
+            <p class="project-desc"><%= startup.description %></p>
+            <p class="project-date">Founded in <%= startup.founded %></p>
+            <i class="icon-arrow-right"></i>
+        </div>
+    <% end %>
+</div>

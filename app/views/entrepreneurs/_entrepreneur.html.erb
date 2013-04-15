@@ -6,7 +6,7 @@
 	    					<i class="profile-icon icon-arrow-right"></i>
 							<%= image_tag entrepreneur.image(:medium) %>
 						</div>
-						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
+						<p class="profile-name"><%= link_to "#{entrepreneur.first_name} #{entrepreneur.last_name}", entrepreneur_path(entrepreneur) %></p>
 						<p class="profile-position"><%= entrepreneur.usertype %> entrepreneur</p>
 						<ul class="social-icons">
 						<% if entrepreneur.facebook != "" %>
@@ -29,15 +29,17 @@
 					<div class="overlay-wrp">
 	        			<div class="overlay"></div>
 						<p class="profile-name"><%= entrepreneur.first_name %> <%= entrepreneur.last_name %></p>
-						<p class="profile-position"><%= entrepreneur.usertype %></p>
-						<p class="profile-quote">is looking to meet and to mentor</p>
+						<p class="profile-position">knows 134 entrepreneurs</p>
+						<p class="profile-position"><% entrepreneur.tag_list.each do |tag| %>
+               				 <i class=" icon-tag"></i> <%= tag %> 
+               			 <% end %></p>
+						<%= link_to "i know him", entrepreneur_path(entrepreneur), class:"btn large" %>
+						
 
-						<% entrepreneur.tag_list.each do |tag| %>
-               				 <p class="btn small "><i class=" icon-tag"></i><%= tag %></p>
-               			 <% end %>
+						
                			 
-						<%= link_to "talk", root_path, class: "btn large" %>
-						<%= link_to "view profile", root_path, class: "btn large" %>
+						<%= link_to "recommend", root_path, class: "btn large" %>
+						<%= link_to "view profile", entrepreneur_path(entrepreneur), class:"btn large" %>
 					</div>
 				</div>
 				<!-- End Profile -->

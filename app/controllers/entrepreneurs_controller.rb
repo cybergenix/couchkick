@@ -1,7 +1,7 @@
 class EntrepreneursController < ApplicationController
   before_filter :authenticate_entrepreneur!, except: [:show]
   def index  
-  	@entrepreneurs = Entrepreneur.all
+  	@entrepreneurs = Entrepreneur.all 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @entrepreneurs }

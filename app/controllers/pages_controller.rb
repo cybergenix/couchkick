@@ -21,7 +21,7 @@ class PagesController < ApplicationController
   end
 
   def opportunities
-    @opportunities = Opportunity.all
+    @opportunities = Opportunity.order("created_at DESC")
   end
 
 end
